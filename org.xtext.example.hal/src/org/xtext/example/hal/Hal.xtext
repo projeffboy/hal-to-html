@@ -1,0 +1,9 @@
+grammar org.xtext.example.hal.Hal with org.eclipse.xtext.common.Terminals
+
+generate hal "http://www.xtext.org/example/hal/Hal"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
