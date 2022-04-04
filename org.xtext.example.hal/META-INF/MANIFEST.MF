@@ -8,5 +8,22 @@ Bundle-SymbolicName: org.xtext.example.hal; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.5.0"
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.xtext.example.hal.validation,
+ org.xtext.example.hal.hal.util,
+ org.xtext.example.hal.generator,
+ org.xtext.example.hal.hal,
+ org.xtext.example.hal.parser.antlr.internal,
+ org.xtext.example.hal.serializer,
+ org.xtext.example.hal.hal.impl,
+ org.xtext.example.hal,
+ org.xtext.example.hal.services,
+ org.xtext.example.hal.parser.antlr,
+ org.xtext.example.hal.scoping
+Import-Package: org.apache.log4j

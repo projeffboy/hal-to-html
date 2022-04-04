@@ -1,0 +1,88 @@
+password "abc123"
+address "baker st"
+
+types {
+	sensors {
+		temperature,
+		window
+	}
+	
+	actuators {
+		heating {
+			turnOnHeating,
+			turnOffHeating
+		}
+		
+		"window motor" {open, close}
+	}
+}
+
+rooms {
+	"Living Room" (30 x 10) {
+		"temperature sensor #1" is type temperature at (0, 5),
+		"temperature sensor #2" is type temperature at (15, 5),
+		window is type window at (30, 5),
+		autoGlass is type "window motor" at (30, 5),
+		heater is type heating at (15, 4.3)
+	}
+	
+	Kitchen (2 x 6) {
+		heater is type heating at (1.5, 0.5),
+		"temperature sensor #1" is type temperature at (0, 0.2),
+		window is type window at (1.5, 6),
+		smartShard is type "window motor" at (30, 5)
+	}
+}
+
+rules {
+	Simple {
+		WHEN "Living Room"."temperature sensor #1" < "18"
+		THEN "Living Room".heater runs heating.turnOffHeating
+	}
+	
+	Compound {
+		WHEN (
+			"Living Room"."temperature sensor #1" < "18"
+			AND "Living Room".window = "closed"
+		)
+		THEN "Living Room".heater runs heating.turnOnHeating
+	}
+	
+	Nested {
+		WHEN (
+			(
+				"Living Room"."temperature sensor #1" < "18"
+				OR NOT "Living Room"."temperature sensor #2" >= "18"
+			) AND "Living Room".window = "closed"
+		)
+		THEN "Living Room".heater runs heating.turnOnHeating,
+		Kitchen.heater runs heating.turnOnHeating
+	}
+	
+	Complex {
+		WHEN (
+			(
+				(
+					(
+						"Living Room"."temperature sensor #1" > "24"
+						AND Kitchen."temperature sensor #1" > "24"
+					) OR "Living Room"."temperature sensor #1" > "26"
+				) OR Kitchen."temperature sensor #1" > "26"
+			) AND (
+				"Living Room".window = "closed"
+				OR Kitchen.window = "closed"
+			)
+		)
+		THEN "Living Room".heater runs heating.turnOffHeating,
+		"Living Room".autoGlass runs "window motor".open,
+		Kitchen.heater runs heating.turnOffHeating,
+		Kitchen.smartShard runs "window motor".open
+	}
+}
+
+sensorEntries {
+	"Living Room".heater {
+		reading "20.434854765 celsius"
+		timestamp 1649049856
+	}
+}

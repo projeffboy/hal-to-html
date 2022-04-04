@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hal:HAL xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hal="http://www.xtext.org/example/hal/HAL" password="abc123" address="baker st">
+  <types xsi:type="hal:Sensor" name="temperature"/>
+  <types xsi:type="hal:Sensor" name="window"/>
+  <types xsi:type="hal:Actuator" name="heating">
+    <commands name="turnOnHeating"/>
+    <commands name="turnOffHeating"/>
+  </types>
+  <types xsi:type="hal:Actuator" name="&quot;window motor&quot;">
+    <commands name="open"/>
+    <commands name="close"/>
+  </types>
+  <rooms name="&quot;Living Room&quot;" length="30.0" width="10.0">
+    <devices name="&quot;temperature sensor #1&quot;" type="//@types.0" widthPos="5.0"/>
+    <devices name="&quot;temperature sensor #2&quot;" type="//@types.0" lengthPos="15.0" widthPos="5.0"/>
+    <devices name="window" type="//@types.1" lengthPos="30.0" widthPos="5.0"/>
+    <devices name="autoGlass" type="//@types.3" lengthPos="30.0" widthPos="5.0"/>
+    <devices name="heater" type="//@types.2" lengthPos="15.0" widthPos="4.3"/>
+  </rooms>
+  <rooms name="Kitchen" length="2.0" width="6.0">
+    <devices name="heater" type="//@types.2" lengthPos="1.5" widthPos="0.5"/>
+    <devices name="&quot;temperature sensor #1&quot;" type="//@types.0" widthPos="0.2"/>
+    <devices name="window" type="//@types.1" lengthPos="1.5" widthPos="6.0"/>
+    <devices name="smartShard" type="//@types.3" lengthPos="30.0" widthPos="5.0"/>
+  </rooms>
+  <rules name="Simple">
+    <precondition xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.0/@devices.0" operator="&lt;" comparedAgainstValue="&quot;18&quot;"/>
+    <actions actuator="//@rooms.0/@devices.4" command="//@types.2/@commands.1"/>
+  </rules>
+  <rules name="Compound">
+    <precondition xsi:type="hal:CompoundRelationalTerm">
+      <LHS xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.0/@devices.0" operator="&lt;" comparedAgainstValue="&quot;18&quot;"/>
+      <RHS xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.0/@devices.2" comparedAgainstValue="&quot;closed&quot;"/>
+    </precondition>
+    <actions actuator="//@rooms.0/@devices.4" command="//@types.2/@commands.0"/>
+  </rules>
+  <rules name="Nested">
+    <precondition xsi:type="hal:CompoundRelationalTerm">
+      <LHS xsi:type="hal:CompoundRelationalTerm" operator="OR">
+        <LHS xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.0/@devices.0" operator="&lt;" comparedAgainstValue="&quot;18&quot;"/>
+        <RHS xsi:type="hal:AtomicRelationalTerm" negated="true" sensor="//@rooms.0/@devices.1" operator=">=" comparedAgainstValue="&quot;18&quot;"/>
+      </LHS>
+      <RHS xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.0/@devices.2" comparedAgainstValue="&quot;closed&quot;"/>
+    </precondition>
+    <actions actuator="//@rooms.0/@devices.4" command="//@types.2/@commands.0"/>
+    <actions actuator="//@rooms.1/@devices.0" command="//@types.2/@commands.0"/>
+  </rules>
+  <rules name="Complex">
+    <precondition xsi:type="hal:CompoundRelationalTerm">
+      <LHS xsi:type="hal:CompoundRelationalTerm" operator="OR">
+        <LHS xsi:type="hal:CompoundRelationalTerm" operator="OR">
+          <LHS xsi:type="hal:CompoundRelationalTerm">
+            <LHS xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.0/@devices.0" operator=">" comparedAgainstValue="&quot;24&quot;"/>
+            <RHS xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.1/@devices.1" operator=">" comparedAgainstValue="&quot;24&quot;"/>
+          </LHS>
+          <RHS xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.0/@devices.0" operator=">" comparedAgainstValue="&quot;26&quot;"/>
+        </LHS>
+        <RHS xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.1/@devices.1" operator=">" comparedAgainstValue="&quot;26&quot;"/>
+      </LHS>
+      <RHS xsi:type="hal:CompoundRelationalTerm" operator="OR">
+        <LHS xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.0/@devices.2" comparedAgainstValue="&quot;closed&quot;"/>
+        <RHS xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.1/@devices.2" comparedAgainstValue="&quot;closed&quot;"/>
+      </RHS>
+    </precondition>
+    <actions actuator="//@rooms.0/@devices.4" command="//@types.2/@commands.1"/>
+    <actions actuator="//@rooms.0/@devices.3" command="//@types.3/@commands.0"/>
+    <actions actuator="//@rooms.1/@devices.0" command="//@types.2/@commands.1"/>
+    <actions actuator="//@rooms.1/@devices.3" command="//@types.3/@commands.0"/>
+  </rules>
+  <entries sensor="//@rooms.0/@devices.4" reading="&quot;20.434854765 celsius&quot;" timeStamp="1649049856"/>
+</hal:HAL>
