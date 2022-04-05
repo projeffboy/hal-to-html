@@ -80,8 +80,8 @@
 											[for (device : Device | room.devices)]
 
 												[if (device.type.oclIsTypeOf(Sensor))]
-													<div class="sensor" style="position: absolute; top: [device.lengthPos/]px; left: [device.widthPos/]px">
-														<img src="./images/sensor.jpg" alt="Sensor"  onclick="showDescription()">
+													<div class="sensor" style="position: absolute; top: [device.lengthPos/]px; left: [device.widthPos/]px;">
+														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>[device.name/]</li>
@@ -98,7 +98,7 @@
 												[/if]
 												[if (device.type.oclIsTypeOf(Actuator))]
 													<div class="actuator" style="position: absolute; top: [device.lengthPos/]px; left: [device.widthPos/]px">
-														<img src="./images/actuator.jpg" alt="Actuator" onclick="showDescription()">
+														<img src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>[device.name/]</li>
