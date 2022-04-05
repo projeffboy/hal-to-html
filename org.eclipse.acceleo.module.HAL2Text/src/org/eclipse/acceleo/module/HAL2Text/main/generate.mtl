@@ -48,7 +48,34 @@
 						<!-- Visual -->
 							<article id="Visual">
 								<h2 class="major">Rooms</h2>
-								<p>Rooms here</p>
+
+								<!-- Acceleo template -->
+								[for (room : Room | rooms)]
+
+									<!-- [room.name/] -->
+
+									<div class="section">
+										<h3 class="major">[room.name/]</h3>
+										<canvas id='[room.name/]' width="[room.width/]" height="[room.length/]"></canvas>
+										<script type="text/javascript">
+										var canvas = document.getElementById('[room.name/]');
+										if (canvas.getContext) {
+											var ctx = canvas.getContext('2d');
+
+											<!-- Room dimension -->
+											ctx.lineWidth = "6";
+											ctx.strokeStyle = "#DCDCDC";
+											ctx.strokeRect(0, 0, [room.width/], [room.length/]);
+
+											<!-- Devices -->
+											
+										}
+										</script>
+									</div>
+
+									<br><br><br>
+
+								[/for]
 							</article>
 
 						<!-- Menu -->

@@ -37,10 +37,51 @@
 						<!-- Visual -->
 							<article id="Visual">
 								<h2 class="major">Rooms</h2>
-								<p>Rooms here</p>
+
+								<!-- Acceleo template -->
+
+									<!-- "Living Room" -->
+
+									<div class="section">
+										<h3 class="major">"Living Room"</h3>
+										<canvas id='"Living Room"' width="1100.0" height="700.0"></canvas>
+										<script type="text/javascript">
+										var canvas = document.getElementById('"Living Room"');
+										if (canvas.getContext) {
+											var ctx = canvas.getContext('2d');
+
+											ctx.lineWidth = "6";
+											ctx.strokeStyle = "#DCDCDC";
+											ctx.strokeRect(0, 0, 1100.0, 700.0);
+										}
+										</script>
+									</div>
+
+									<br><br><br>
+
+
+									<!-- Kitchen -->
+
+									<div class="section">
+										<h3 class="major">Kitchen</h3>
+										<canvas id='Kitchen' width="900.0" height="600.0"></canvas>
+										<script type="text/javascript">
+										var canvas = document.getElementById('Kitchen');
+										if (canvas.getContext) {
+											var ctx = canvas.getContext('2d');
+
+											ctx.lineWidth = "6";
+											ctx.strokeStyle = "#DCDCDC";
+											ctx.strokeRect(0, 0, 900.0, 600.0);
+										}
+										</script>
+									</div>
+
+									<br><br><br>
+
 							</article>
 
-						<!-- Contact -->
+						<!-- Menu -->
 							<article id="Menu">
 								<h2 class="major">Menu</h2>
 								<p>Menu here</p>
@@ -64,6 +105,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		<!-- hal specific scripts -->
+			<script src="assets/halScripts.js"></script>
 
 	</body>
 </html>
