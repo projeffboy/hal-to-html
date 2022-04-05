@@ -62,13 +62,20 @@
 										if (canvas.getContext) {
 											var ctx = canvas.getContext('2d');
 
-											<!-- Room dimension -->
+											<!-- Draw Room -->
 											ctx.lineWidth = "6";
 											ctx.strokeStyle = "#DCDCDC";
 											ctx.strokeRect(0, 0, [room.width/], [room.length/]);
 
-											<!-- Devices -->
-											
+											<!-- Draw Devices -->
+											[for (device : Device | room.devices)]
+												[if (device.oclIsTypeOf(Sensor))]
+													[device.type/]
+												[/if]
+												[if (device.oclIsTypeOf(Actuator))]
+													[device.type/]
+												[/if]
+											[/for]
 										}
 										</script>
 									</div>
