@@ -38,49 +38,154 @@
 							<article id="Visual">
 								<h2 class="major">Rooms</h2>
 
+								<!-- Device Toggles -->
+								<ul style="list-style-type: none; columns: 8; -webkit-columns: 8; -moz-columns: 8;">
+									<li>
+										<label class="switch">
+											<input type="checkbox" onChange="displaySensors()">
+											<span class="slider round"></span>
+										</label>
+										<p>Sensor</p>
+									</li>
+									<li>
+										<label class="switch">
+											<input type="checkbox" onChange="displayActuators()">
+											<span class="slider round"></span>
+										</label>
+										<p>Actuator</p>
+									</li>
+								</ul>
+
+
 								<!-- Acceleo template -->
 
-									<!-- "Living Room" -->
 
+									<!-- "Living Room" -->
 									<div class="section">
 										<h3 class="major">"Living Room"</h3>
-										<canvas id='"Living Room"' width="1100.0" height="700.0"></canvas>
-										<script type="text/javascript">
-										var canvas = document.getElementById('"Living Room"');
-										if (canvas.getContext) {
-											var ctx = canvas.getContext('2d');
 
-											<!-- Draw Room -->
-											ctx.lineWidth = "6";
-											ctx.strokeStyle = "#DCDCDC";
-											ctx.strokeRect(0, 0, 1100.0, 700.0);
+										<div style="position: relative; border: 10px solid #DCDCDC; height: 700.0px; width: 1100.0px;">
 
-											<!-- Draw Devices -->
-										}
-										</script>
+													<div class="sensor" style="position: absolute; top: 100.0px; left: 200.0px">
+														<img src="./images/sensor.jpg" alt="Sensor"  onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"temperature sensor #1"</li>
+																<li>(100.0, 200.0)</li>
+																<li>TODO: list sensor reading</li>
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="sensor" style="position: absolute; top: 300.0px; left: 500.0px">
+														<img src="./images/sensor.jpg" alt="Sensor"  onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"temperature sensor #2"</li>
+																<li>(300.0, 500.0)</li>
+																<li>TODO: list sensor reading</li>
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="sensor" style="position: absolute; top: 30.0px; left: 5.0px">
+														<img src="./images/sensor.jpg" alt="Sensor"  onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>window</li>
+																<li>(30.0, 5.0)</li>
+																<li>TODO: list sensor reading</li>
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="actuator" style="position: absolute; top: 30.0px; left: 5.0px">
+														<img src="./images/actuator.jpg" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>autoGlass</li>
+																<li>(30.0, 5.0)</li>
+																<li>TODO: list commands</li>
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="actuator" style="position: absolute; top: 15.0px; left: 4.3px">
+														<img src="./images/actuator.jpg" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>heater</li>
+																<li>(15.0, 4.3)</li>
+																<li>TODO: list commands</li>
+															</ul>
+														</div>
+													</div>
+
+										</div>
 									</div>
 
 									<br><br><br>
 
 
-									<!-- Kitchen -->
 
+									<!-- Kitchen -->
 									<div class="section">
 										<h3 class="major">Kitchen</h3>
-										<canvas id='Kitchen' width="900.0" height="600.0"></canvas>
-										<script type="text/javascript">
-										var canvas = document.getElementById('Kitchen');
-										if (canvas.getContext) {
-											var ctx = canvas.getContext('2d');
 
-											<!-- Draw Room -->
-											ctx.lineWidth = "6";
-											ctx.strokeStyle = "#DCDCDC";
-											ctx.strokeRect(0, 0, 900.0, 600.0);
+										<div style="position: relative; border: 10px solid #DCDCDC; height: 600.0px; width: 900.0px;">
 
-											<!-- Draw Devices -->
-										}
-										</script>
+													<div class="actuator" style="position: absolute; top: 1.5px; left: 0.5px">
+														<img src="./images/actuator.jpg" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>heater</li>
+																<li>(1.5, 0.5)</li>
+																<li>TODO: list commands</li>
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="sensor" style="position: absolute; top: 0.0px; left: 0.2px">
+														<img src="./images/sensor.jpg" alt="Sensor"  onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"temperature sensor #1"</li>
+																<li>(0.0, 0.2)</li>
+																<li>TODO: list sensor reading</li>
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="sensor" style="position: absolute; top: 1.5px; left: 6.0px">
+														<img src="./images/sensor.jpg" alt="Sensor"  onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>window</li>
+																<li>(1.5, 6.0)</li>
+																<li>TODO: list sensor reading</li>
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="actuator" style="position: absolute; top: 30.0px; left: 5.0px">
+														<img src="./images/actuator.jpg" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>smartShard</li>
+																<li>(30.0, 5.0)</li>
+																<li>TODO: list commands</li>
+															</ul>
+														</div>
+													</div>
+
+										</div>
 									</div>
 
 									<br><br><br>
@@ -90,7 +195,33 @@
 						<!-- Menu -->
 							<article id="Menu">
 								<h2 class="major">Menu</h2>
-								<p>Menu here</p>
+
+								<!-- Room Table -->
+								<table>
+									<tr>
+										<th>Rooms</th>
+										<th>Devices</th>
+									</tr>
+									<tr>
+										<td><p>"Living Room" <br> 700.0 X 1100.0</p><br></td>
+										<td>
+													Sensor	|	"temperature sensor #1"	|	(100.0, 100.0) <br>
+													Sensor	|	"temperature sensor #2"	|	(300.0, 300.0) <br>
+													Sensor	|	window	|	(30.0, 30.0) <br>
+													Actuator	|	autoGlass	|	(30.0, 30.0) <br>
+													Actuator	|	heater	|	(15.0, 15.0) <br>
+										</td>
+									</tr>
+									<tr>
+										<td><p>Kitchen <br> 600.0 X 900.0</p><br></td>
+										<td>
+													Actuator	|	heater	|	(1.5, 1.5) <br>
+													Sensor	|	"temperature sensor #1"	|	(0.0, 0.0) <br>
+													Sensor	|	window	|	(1.5, 1.5) <br>
+													Actuator	|	smartShard	|	(30.0, 30.0) <br>
+										</td>
+									</tr>
+								</table>
 							</article>
 
 					</div>
@@ -111,8 +242,28 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-		<!-- hal specific scripts -->
-			<script src="assets/halScripts.js"></script>
 
+		<!-- HAl specific scripts -->
+			<script>
+				function displaySensors() {
+					var x = document.getElementsByClassName("sensor");
+					if (window.getComputedStyle(x).display === "none") {
+						document.querySelectorAll(".sensor").forEach(a=>a.style.display = "block");
+					}
+					else {
+						document.querySelectorAll(".sensor").forEach(a=>a.style.display = "none");
+  					}
+				}
+
+				function displayActuators() {
+					var x = document.getElementsByClassName("actuator");
+					if (window.getComputedStyle(x).display === "none") {
+						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "block");
+					}
+					else {
+						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "none");
+  					}
+				}
+			</script>
 	</body>
 </html>

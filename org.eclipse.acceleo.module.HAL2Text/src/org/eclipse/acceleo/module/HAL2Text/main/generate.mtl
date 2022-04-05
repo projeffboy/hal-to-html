@@ -49,35 +49,63 @@
 							<article id="Visual">
 								<h2 class="major">Rooms</h2>
 
+								<!-- Device Toggles -->
+								<ul style="list-style-type: none; columns: 8; -webkit-columns: 8; -moz-columns: 8;">
+									<li>
+										<label class="switch">
+											<input type="checkbox" onChange="displaySensors()">
+											<span class="slider round"></span>
+										</label>
+										<p>Sensor</p>
+									</li>
+									<li>
+										<label class="switch">
+											<input type="checkbox" onChange="displayActuators()">
+											<span class="slider round"></span>
+										</label>
+										<p>Actuator</p>
+									</li>
+								</ul>
+
+
 								<!-- Acceleo template -->
 								[for (room : Room | rooms)]
 
-									<!-- [room.name/] -->
 
+									<!-- [room.name/] -->
 									<div class="section">
 										<h3 class="major">[room.name/]</h3>
-										<canvas id='[room.name/]' width="[room.width/]" height="[room.length/]"></canvas>
-										<script type="text/javascript">
-										var canvas = document.getElementById('[room.name/]');
-										if (canvas.getContext) {
-											var ctx = canvas.getContext('2d');
 
-											<!-- Draw Room -->
-											ctx.lineWidth = "6";
-											ctx.strokeStyle = "#DCDCDC";
-											ctx.strokeRect(0, 0, [room.width/], [room.length/]);
-
-											<!-- Draw Devices -->
+										<div style="position: relative; border: 10px solid #DCDCDC; height: [room.length/]px; width: [room.width/]px;">
 											[for (device : Device | room.devices)]
-												[if (device.oclIsTypeOf(Sensor))]
-													[device.type/]
+
+												[if (device.type.oclIsTypeOf(Sensor))]
+													<div class="sensor" style="position: absolute; top: [device.lengthPos/]px; left: [device.widthPos/]px">
+														<img src="./images/sensor.jpg" alt="Sensor"  onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>[device.name/]</li>
+																<li>([device.lengthPos/], [device.widthPos/])</li>
+																<li>TODO: list sensor reading</li>
+															</ul>
+														</div>
+													</div>
 												[/if]
-												[if (device.oclIsTypeOf(Actuator))]
-													[device.type/]
+												[if (device.type.oclIsTypeOf(Actuator))]
+													<div class="actuator" style="position: absolute; top: [device.lengthPos/]px; left: [device.widthPos/]px">
+														<img src="./images/actuator.jpg" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>[device.name/]</li>
+																<li>([device.lengthPos/], [device.widthPos/])</li>
+																<li>TODO: list commands</li>
+															</ul>
+														</div>
+													</div>
 												[/if]
+
 											[/for]
-										}
-										</script>
+										</div>
 									</div>
 
 									<br><br><br>
@@ -88,7 +116,29 @@
 						<!-- Menu -->
 							<article id="Menu">
 								<h2 class="major">Menu</h2>
-								<p>Menu here</p>
+
+								<!-- Room Table -->
+								<table>
+									<tr>
+										<th>Rooms</th>
+										<th>Devices</th>
+									</tr>
+									[for (room : Room | rooms)]
+									<tr>
+										<td><p>[room.name/] <br> [room.length/] X [room.width/]</p><br></td>
+										<td>
+											[for (device : Device | room.devices)]
+												[if (device.type.oclIsTypeOf(Sensor))]
+													Sensor	|	[device.name/]	|	([device.lengthPos/], [device.lengthPos/]) <br>
+												[/if]
+												[if (device.type.oclIsTypeOf(Actuator))]
+													Actuator	|	[device.name/]	|	([device.lengthPos/], [device.lengthPos/]) <br>
+												[/if]
+											[/for]
+										</td>
+									</tr>
+									[/for]
+								</table>
 							</article>
 
 					</div>
@@ -109,9 +159,29 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-		<!-- hal specific scripts -->
-			<script src="assets/halScripts.js"></script>
 
+		<!-- HAl specific scripts -->
+			<script>
+				function displaySensors() {
+					var x = document.getElementsByClassName("sensor");
+					if (window.getComputedStyle(x).display === "none") {
+						document.querySelectorAll(".sensor").forEach(a=>a.style.display = "block");
+					}
+					else {
+						document.querySelectorAll(".sensor").forEach(a=>a.style.display = "none");
+  					}
+				}
+
+				function displayActuators() {
+					var x = document.getElementsByClassName("actuator");
+					if (window.getComputedStyle(x).display === "none") {
+						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "block");
+					}
+					else {
+						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "none");
+  					}
+				}
+			</script>
 	</body>
 </html>
 [/file]

@@ -29,12 +29,13 @@
     <devices
         name="&quot;temperature sensor #1&quot;"
         type="//@types.0"
-        widthPos="5.0"/>
+        lengthPos="100.0"
+        widthPos="200.0"/>
     <devices
         name="&quot;temperature sensor #2&quot;"
         type="//@types.0"
-        lengthPos="15.0"
-        widthPos="5.0"/>
+        lengthPos="300.0"
+        widthPos="500.0"/>
     <devices
         name="window"
         type="//@types.1"
