@@ -5,7 +5,7 @@
     <semanticResources>Hal.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_bnEfwLR6Eeyo1JYiY6M0ww">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_cMEqQLR6Eeyo1JYiY6M0ww" name="hal class diagram" repPath="#_cLjF0LR6Eeyo1JYiY6M0ww" changeId="c5f4e952-4402-420a-a671-6da93891503e">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_cMEqQLR6Eeyo1JYiY6M0ww" name="hal class diagram" repPath="#_cLjF0LR6Eeyo1JYiY6M0ww" changeId="149d1180-14fc-48fa-8b07-091bbbfdd43b">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="Hal.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -377,7 +377,7 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_cvan7rR6Eeyo1JYiY6M0ww" type="4001" element="_cuqZ9rR6Eeyo1JYiY6M0ww" source="_cu_xI7R6Eeyo1JYiY6M0ww" target="_cvAYMLR6Eeyo1JYiY6M0ww">
           <children xmi:type="notation:Node" xmi:id="_cvan8rR6Eeyo1JYiY6M0ww" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvan87R6Eeyo1JYiY6M0ww" x="-75" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvan87R6Eeyo1JYiY6M0ww" x="51" y="-110"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_cvan9LR6Eeyo1JYiY6M0ww" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvan9bR6Eeyo1JYiY6M0ww" x="-36" y="4"/>
@@ -393,7 +393,7 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_cvan-rR6Eeyo1JYiY6M0ww" type="4001" element="_curBBrR6Eeyo1JYiY6M0ww" source="_cvAYMLR6Eeyo1JYiY6M0ww" target="_cu-jALR6Eeyo1JYiY6M0ww">
           <children xmi:type="notation:Node" xmi:id="_cvan_rR6Eeyo1JYiY6M0ww" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvan_7R6Eeyo1JYiY6M0ww" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvan_7R6Eeyo1JYiY6M0ww" x="8" y="-13"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_cvbO8LR6Eeyo1JYiY6M0ww" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvbO8bR6Eeyo1JYiY6M0ww" y="10"/>
@@ -457,7 +457,7 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_cvdEK7R6Eeyo1JYiY6M0ww" type="4001" element="_cus2N7R6Eeyo1JYiY6M0ww" source="_cvCNY7R6Eeyo1JYiY6M0ww" target="_cu_KELR6Eeyo1JYiY6M0ww">
           <children xmi:type="notation:Node" xmi:id="_cvdEL7R6Eeyo1JYiY6M0ww" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvdEMLR6Eeyo1JYiY6M0ww" x="13" y="-28"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvdEMLR6Eeyo1JYiY6M0ww" x="13" y="-30"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_cvdEMbR6Eeyo1JYiY6M0ww" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvdEMrR6Eeyo1JYiY6M0ww" x="-8"/>
@@ -505,17 +505,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_cve5ULR6Eeyo1JYiY6M0ww" type="4001" element="_cuv5gLR6Eeyo1JYiY6M0ww" source="_cvBmU7R6Eeyo1JYiY6M0ww" target="_cu_KELR6Eeyo1JYiY6M0ww">
           <children xmi:type="notation:Node" xmi:id="_cvfgYLR6Eeyo1JYiY6M0ww" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvfgYbR6Eeyo1JYiY6M0ww" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvfgYbR6Eeyo1JYiY6M0ww" x="-9" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_cvfgYrR6Eeyo1JYiY6M0ww" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvfgY7R6Eeyo1JYiY6M0ww" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvfgY7R6Eeyo1JYiY6M0ww" x="1"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_cvgHcLR6Eeyo1JYiY6M0ww" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvgHcbR6Eeyo1JYiY6M0ww" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_cvgHcbR6Eeyo1JYiY6M0ww" x="-9" y="10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_cve5UbR6Eeyo1JYiY6M0ww" routing="Tree"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_cve5UrR6Eeyo1JYiY6M0ww" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cve5U7R6Eeyo1JYiY6M0ww" points="[-1, 0, 273, 60]$[-275, -60, -1, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cve5U7R6Eeyo1JYiY6M0ww" points="[0, 0, -251, 52]$[0, -25, -251, 27]$[177, -25, -74, 27]$[177, -52, -74, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cvgHcrR6Eeyo1JYiY6M0ww" id="(0.5046728971962616,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cvgHc7R6Eeyo1JYiY6M0ww" id="(0.5029940119760479,1.0)"/>
         </edges>
