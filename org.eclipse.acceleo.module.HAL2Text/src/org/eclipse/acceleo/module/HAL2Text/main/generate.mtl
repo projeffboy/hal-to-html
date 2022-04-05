@@ -4,4 +4,27 @@
 
 [template public generateElement(aHal : HAL)]
 [comment @main/]
+[halPage(aHal)/]
+[/template]
+
+[template public halPage(aHal : HAL)]
+[file ('HAL.html', false, 'UTF-8')]
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <title>HAL Editor</title>
+</head>
+
+<body>
+[comment screen divided vertically in half: left side graphical, right side recreation of A1 interface/]
+[comment Each room has its own div stacked vertically for a canvas created in js/]
+[comment Clickable elements for devices in canvas /]
+</body>
+
+<footer>
+	<p>&copy; ECSE439P 7	2022</p>
+</footer>
+[/file]
 [/template]
