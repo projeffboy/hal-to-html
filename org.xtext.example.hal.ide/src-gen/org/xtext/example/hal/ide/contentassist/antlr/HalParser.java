@@ -41,7 +41,8 @@ public class HalParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getHALAccess().getGroup(), "rule__HAL__Group__0");
 			builder.put(grammarAccess.getHALAccess().getGroup_4(), "rule__HAL__Group_4__0");
 			builder.put(grammarAccess.getHALAccess().getGroup_4_2(), "rule__HAL__Group_4_2__0");
-			builder.put(grammarAccess.getHALAccess().getGroup_4_2_3(), "rule__HAL__Group_4_2_3__0");
+			builder.put(grammarAccess.getHALAccess().getGroup_4_2_2(), "rule__HAL__Group_4_2_2__0");
+			builder.put(grammarAccess.getHALAccess().getGroup_4_2_2_1(), "rule__HAL__Group_4_2_2_1__0");
 			builder.put(grammarAccess.getHALAccess().getGroup_4_3(), "rule__HAL__Group_4_3__0");
 			builder.put(grammarAccess.getHALAccess().getGroup_5(), "rule__HAL__Group_5__0");
 			builder.put(grammarAccess.getHALAccess().getGroup_6(), "rule__HAL__Group_6__0");
@@ -62,15 +63,13 @@ public class HalParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
 			builder.put(grammarAccess.getAtomicRelationalTermAccess().getGroup(), "rule__AtomicRelationalTerm__Group__0");
 			builder.put(grammarAccess.getCompoundRelationalTermAccess().getGroup(), "rule__CompoundRelationalTerm__Group__0");
-			builder.put(grammarAccess.getCommandAccess().getGroup(), "rule__Command__Group__0");
-			builder.put(grammarAccess.getSensorAccess().getGroup(), "rule__Sensor__Group__0");
 			builder.put(grammarAccess.getActuatorAccess().getGroup(), "rule__Actuator__Group__0");
-			builder.put(grammarAccess.getActuatorAccess().getGroup_3(), "rule__Actuator__Group_3__0");
-			builder.put(grammarAccess.getActuatorAccess().getGroup_3_1(), "rule__Actuator__Group_3_1__0");
+			builder.put(grammarAccess.getActuatorAccess().getGroup_2(), "rule__Actuator__Group_2__0");
+			builder.put(grammarAccess.getActuatorAccess().getGroup_2_1(), "rule__Actuator__Group_2_1__0");
 			builder.put(grammarAccess.getHALAccess().getPasswordAssignment_1(), "rule__HAL__PasswordAssignment_1");
 			builder.put(grammarAccess.getHALAccess().getAddressAssignment_3(), "rule__HAL__AddressAssignment_3");
-			builder.put(grammarAccess.getHALAccess().getTypesAssignment_4_2_2(), "rule__HAL__TypesAssignment_4_2_2");
-			builder.put(grammarAccess.getHALAccess().getTypesAssignment_4_2_3_1(), "rule__HAL__TypesAssignment_4_2_3_1");
+			builder.put(grammarAccess.getHALAccess().getTypesAssignment_4_2_2_0(), "rule__HAL__TypesAssignment_4_2_2_0");
+			builder.put(grammarAccess.getHALAccess().getTypesAssignment_4_2_2_1_1(), "rule__HAL__TypesAssignment_4_2_2_1_1");
 			builder.put(grammarAccess.getHALAccess().getTypesAssignment_4_3_2(), "rule__HAL__TypesAssignment_4_3_2");
 			builder.put(grammarAccess.getHALAccess().getRoomsAssignment_5_2(), "rule__HAL__RoomsAssignment_5_2");
 			builder.put(grammarAccess.getHALAccess().getRulesAssignment_6_2(), "rule__HAL__RulesAssignment_6_2");
@@ -102,11 +101,11 @@ public class HalParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCompoundRelationalTermAccess().getLHSAssignment_2(), "rule__CompoundRelationalTerm__LHSAssignment_2");
 			builder.put(grammarAccess.getCompoundRelationalTermAccess().getOperatorAssignment_3(), "rule__CompoundRelationalTerm__OperatorAssignment_3");
 			builder.put(grammarAccess.getCompoundRelationalTermAccess().getRHSAssignment_4(), "rule__CompoundRelationalTerm__RHSAssignment_4");
-			builder.put(grammarAccess.getCommandAccess().getNameAssignment_1(), "rule__Command__NameAssignment_1");
-			builder.put(grammarAccess.getSensorAccess().getNameAssignment_1(), "rule__Sensor__NameAssignment_1");
-			builder.put(grammarAccess.getActuatorAccess().getNameAssignment_1(), "rule__Actuator__NameAssignment_1");
-			builder.put(grammarAccess.getActuatorAccess().getCommandsAssignment_3_0(), "rule__Actuator__CommandsAssignment_3_0");
-			builder.put(grammarAccess.getActuatorAccess().getCommandsAssignment_3_1_1(), "rule__Actuator__CommandsAssignment_3_1_1");
+			builder.put(grammarAccess.getCommandAccess().getNameAssignment(), "rule__Command__NameAssignment");
+			builder.put(grammarAccess.getSensorAccess().getNameAssignment(), "rule__Sensor__NameAssignment");
+			builder.put(grammarAccess.getActuatorAccess().getNameAssignment_0(), "rule__Actuator__NameAssignment_0");
+			builder.put(grammarAccess.getActuatorAccess().getCommandsAssignment_2_0(), "rule__Actuator__CommandsAssignment_2_0");
+			builder.put(grammarAccess.getActuatorAccess().getCommandsAssignment_2_1_1(), "rule__Actuator__CommandsAssignment_2_1_1");
 		}
 	}
 	

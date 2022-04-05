@@ -141,34 +141,11 @@ ruleHAL returns [EObject current=null]
 				}
 				(
 					(
-						{
-							newCompositeNode(grammarAccess.getHALAccess().getTypesSensorParserRuleCall_4_2_2_0());
-						}
-						lv_types_8_0=ruleSensor
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getHALRule());
-							}
-							add(
-								$current,
-								"types",
-								lv_types_8_0,
-								"org.xtext.example.hal.Hal.Sensor");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				(
-					otherlv_9=','
-					{
-						newLeafNode(otherlv_9, grammarAccess.getHALAccess().getCommaKeyword_4_2_3_0());
-					}
-					(
 						(
 							{
-								newCompositeNode(grammarAccess.getHALAccess().getTypesSensorParserRuleCall_4_2_3_1_0());
+								newCompositeNode(grammarAccess.getHALAccess().getTypesSensorParserRuleCall_4_2_2_0_0());
 							}
-							lv_types_10_0=ruleSensor
+							lv_types_8_0=ruleSensor
 							{
 								if ($current==null) {
 									$current = createModelElementForParent(grammarAccess.getHALRule());
@@ -176,16 +153,41 @@ ruleHAL returns [EObject current=null]
 								add(
 									$current,
 									"types",
-									lv_types_10_0,
+									lv_types_8_0,
 									"org.xtext.example.hal.Hal.Sensor");
 								afterParserOrEnumRuleCall();
 							}
 						)
 					)
-				)*
+					(
+						otherlv_9=','
+						{
+							newLeafNode(otherlv_9, grammarAccess.getHALAccess().getCommaKeyword_4_2_2_1_0());
+						}
+						(
+							(
+								{
+									newCompositeNode(grammarAccess.getHALAccess().getTypesSensorParserRuleCall_4_2_2_1_1_0());
+								}
+								lv_types_10_0=ruleSensor
+								{
+									if ($current==null) {
+										$current = createModelElementForParent(grammarAccess.getHALRule());
+									}
+									add(
+										$current,
+										"types",
+										lv_types_10_0,
+										"org.xtext.example.hal.Hal.Sensor");
+									afterParserOrEnumRuleCall();
+								}
+							)
+						)
+					)*
+				)?
 				otherlv_11='}'
 				{
-					newLeafNode(otherlv_11, grammarAccess.getHALAccess().getRightCurlyBracketKeyword_4_2_4());
+					newLeafNode(otherlv_11, grammarAccess.getHALAccess().getRightCurlyBracketKeyword_4_2_3());
 				}
 			)?
 			(
@@ -1239,29 +1241,20 @@ ruleCommand returns [EObject current=null]
 	(
 		(
 			{
-				$current = forceCreateModelElement(
-					grammarAccess.getCommandAccess().getCommandAction_0(),
-					$current);
+				newCompositeNode(grammarAccess.getCommandAccess().getNameQualifiedNameParserRuleCall_0());
 			}
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCommandAccess().getNameQualifiedNameParserRuleCall_1_0());
+			lv_name_0_0=ruleQualifiedName
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getCommandRule());
 				}
-				lv_name_1_0=ruleQualifiedName
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCommandRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.xtext.example.hal.Hal.QualifiedName");
-					afterParserOrEnumRuleCall();
-				}
-			)
+				set(
+					$current,
+					"name",
+					lv_name_0_0,
+					"org.xtext.example.hal.Hal.QualifiedName");
+				afterParserOrEnumRuleCall();
+			}
 		)
 	)
 ;
@@ -1284,29 +1277,20 @@ ruleSensor returns [EObject current=null]
 	(
 		(
 			{
-				$current = forceCreateModelElement(
-					grammarAccess.getSensorAccess().getSensorAction_0(),
-					$current);
+				newCompositeNode(grammarAccess.getSensorAccess().getNameQualifiedNameParserRuleCall_0());
 			}
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSensorAccess().getNameQualifiedNameParserRuleCall_1_0());
+			lv_name_0_0=ruleQualifiedName
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getSensorRule());
 				}
-				lv_name_1_0=ruleQualifiedName
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSensorRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.xtext.example.hal.Hal.QualifiedName");
-					afterParserOrEnumRuleCall();
-				}
-			)
+				set(
+					$current,
+					"name",
+					lv_name_0_0,
+					"org.xtext.example.hal.Hal.QualifiedName");
+				afterParserOrEnumRuleCall();
+			}
 		)
 	)
 ;
@@ -1328,18 +1312,11 @@ ruleActuator returns [EObject current=null]
 }:
 	(
 		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getActuatorAccess().getActuatorAction_0(),
-					$current);
-			}
-		)
-		(
 			(
 				{
-					newCompositeNode(grammarAccess.getActuatorAccess().getNameQualifiedNameParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getActuatorAccess().getNameQualifiedNameParserRuleCall_0_0());
 				}
-				lv_name_1_0=ruleQualifiedName
+				lv_name_0_0=ruleQualifiedName
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -1347,23 +1324,23 @@ ruleActuator returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_0_0,
 						"org.xtext.example.hal.Hal.QualifiedName");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_2='{'
+		otherlv_1='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getActuatorAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getActuatorAccess().getLeftCurlyBracketKeyword_1());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getActuatorAccess().getCommandsCommandParserRuleCall_3_0_0());
+						newCompositeNode(grammarAccess.getActuatorAccess().getCommandsCommandParserRuleCall_2_0_0());
 					}
-					lv_commands_3_0=ruleCommand
+					lv_commands_2_0=ruleCommand
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -1371,23 +1348,23 @@ ruleActuator returns [EObject current=null]
 						add(
 							$current,
 							"commands",
-							lv_commands_3_0,
+							lv_commands_2_0,
 							"org.xtext.example.hal.Hal.Command");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_4=','
+				otherlv_3=','
 				{
-					newLeafNode(otherlv_4, grammarAccess.getActuatorAccess().getCommaKeyword_3_1_0());
+					newLeafNode(otherlv_3, grammarAccess.getActuatorAccess().getCommaKeyword_2_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getActuatorAccess().getCommandsCommandParserRuleCall_3_1_1_0());
+							newCompositeNode(grammarAccess.getActuatorAccess().getCommandsCommandParserRuleCall_2_1_1_0());
 						}
-						lv_commands_5_0=ruleCommand
+						lv_commands_4_0=ruleCommand
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getActuatorRule());
@@ -1395,7 +1372,7 @@ ruleActuator returns [EObject current=null]
 							add(
 								$current,
 								"commands",
-								lv_commands_5_0,
+								lv_commands_4_0,
 								"org.xtext.example.hal.Hal.Command");
 							afterParserOrEnumRuleCall();
 						}
@@ -1403,9 +1380,9 @@ ruleActuator returns [EObject current=null]
 				)
 			)*
 		)?
-		otherlv_6='}'
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getActuatorAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getActuatorAccess().getRightCurlyBracketKeyword_3());
 		}
 	)
 ;

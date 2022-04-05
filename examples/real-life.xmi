@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hal:HAL xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hal="http://www.xtext.org/example/hal/HAL" password="free@watercolor4A6" address="528 Alcott Ln, Bolingbrook, IL 60440, USA">
+  <types xsi:type="hal:Sensor" name="proximity"/>
+  <types xsi:type="hal:Sensor" name="temperature"/>
+  <types xsi:type="hal:Sensor" name="door"/>
+  <types xsi:type="hal:Actuator" name="lightbulb">
+    <commands name="turnOn"/>
+    <commands name="turnOff"/>
+    <commands name="changeColor"/>
+    <commands name="dim"/>
+    <commands name="brighten"/>
+    <commands name="pulse"/>
+  </types>
+  <types xsi:type="hal:Actuator" name="speaker">
+    <commands name="play"/>
+    <commands name="pause"/>
+    <commands name="increaseVolume"/>
+    <commands name="decreaseVolume"/>
+    <commands name="nextTrack"/>
+    <commands name="previousTrack"/>
+    <commands name="shufflePlaylist"/>
+    <commands name="randomPlaylist"/>
+    <commands name="voiceAssistant"/>
+  </types>
+  <types xsi:type="hal:Actuator" name="securityCamera">
+    <commands name="record"/>
+  </types>
+  <types xsi:type="hal:Actuator" name="surveillanceRecorder">
+    <commands name="record"/>
+  </types>
+  <types xsi:type="hal:Actuator" name="smartPlug"/>
+  <types xsi:type="hal:Actuator" name="tempRegulator">
+    <commands name="increaseTemp"/>
+    <commands name="decreaseTemp"/>
+  </types>
+  <types xsi:type="hal:Actuator" name="lock">
+    <commands name="lock"/>
+    <commands name="unlock"/>
+  </types>
+  <types xsi:type="hal:Actuator" name="curtainMotor">
+    <commands name="open"/>
+    <commands name="close"/>
+  </types>
+  <rooms name="Studio" length="6.0" width="6.0">
+    <devices name="&quot;Philips Hue lamp&quot;" type="//@types.3" lengthPos="0.5" widthPos="1.5"/>
+    <devices name="&quot;Philips Hue #1&quot;" type="//@types.3" lengthPos="2.0" widthPos="2.0"/>
+    <devices name="&quot;Philips Hue #2&quot;" type="//@types.3" lengthPos="4.0" widthPos="2.0"/>
+    <devices name="&quot;Philips Hue #3&quot;" type="//@types.3" lengthPos="2.0" widthPos="4.0"/>
+    <devices name="&quot;Philips Hue #4&quot;" type="//@types.3" lengthPos="4.0" widthPos="4.0"/>
+    <devices name="&quot;Amazon Echo Studio&quot;" type="//@types.4" lengthPos="0.5" widthPos="1.5"/>
+    <devices name="&quot;Arlo Pro 4&quot;" type="//@types.5"/>
+    <devices name="&quot;Eve Energy&quot;" type="//@types.7" widthPos="3.0"/>
+    <devices name="proximity1" type="//@types.0" lengthPos="1.5" widthPos="1.5"/>
+    <devices name="&quot;home alone 4 curtain mover&quot;" type="//@types.10" lengthPos="1.0" widthPos="6.0"/>
+    <devices name="&quot;nest learning thermostat (sensor)&quot;" type="//@types.1" widthPos="3.0"/>
+    <devices name="&quot;nest learning thermostat (actuator)&quot;" type="//@types.8" widthPos="3.0"/>
+    <devices name="&quot;August Smart Lock Pro&quot;" type="//@types.9"/>
+    <devices name="&quot;mahogany door&quot;" type="//@types.2"/>
+  </rooms>
+  <rooms name="Bathroom" length="2.0" width="3.0"/>
+  <rooms name="Kitchen" length="2.5" width="2.5">
+    <devices name="&quot;proximity5&quot;" type="//@types.0" lengthPos="1.25" widthPos="1.25"/>
+    <devices name="&quot;Philips Hue #5&quot;" type="//@types.3" lengthPos="1.25" widthPos="1.25"/>
+    <devices name="&quot;inconspicuous government listening device&quot;" type="//@types.6" lengthPos="2.5" widthPos="2.5"/>
+  </rooms>
+  <rules name="Autolock" active="true">
+    <precondition xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.0/@devices.13" comparedAgainstValue="&quot;closed&quot;"/>
+    <actions actuator="//@rooms.0/@devices.12" command="//@types.9/@commands.0"/>
+  </rules>
+  <rules name="TurnOnLightsInKitchen" active="true">
+    <precondition xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.2/@devices.0" operator="&lt;=" comparedAgainstValue="&quot;5min (last detection)&quot;"/>
+    <actions actuator="//@rooms.2/@devices.1" command="//@types.3/@commands.0"/>
+  </rules>
+  <rules name="TurnOnLightsInKitchen" active="true">
+    <precondition xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.2/@devices.0" operator=">" comparedAgainstValue="&quot;5min (last detection)&quot;"/>
+    <actions actuator="//@rooms.2/@devices.1" command="//@types.3/@commands.1"/>
+  </rules>
+</hal:HAL>

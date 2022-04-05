@@ -1,0 +1,102 @@
+password "free@watercolor4A6"
+address "528 Alcott Ln, Bolingbrook, IL 60440, USA" // randomly taken from google maps
+
+// https://www.techradar.com/news/smart-home-devices
+
+types {
+	sensors {
+		proximity,
+		temperature,
+		door
+	}
+	
+	actuators {
+		lightbulb {
+			turnOn,
+			turnOff,
+			changeColor,
+			dim,
+			brighten,
+			pulse
+		}
+		
+		speaker {
+			play,
+			pause,
+			increaseVolume,
+			decreaseVolume,
+			nextTrack,
+			previousTrack,
+			shufflePlaylist,
+			randomPlaylist,
+			voiceAssistant
+		}
+		
+		securityCamera {
+			record
+		}
+		
+		surveillanceRecorder {record}
+		
+		smartPlug {}
+		
+		tempRegulator {
+			increaseTemp,
+			decreaseTemp
+		}
+		
+		lock {
+			lock,
+			unlock
+		}
+		
+		curtainMotor {open, close}
+	}
+}
+
+
+rooms {
+	Studio (6 x 6) {
+		"Philips Hue lamp" is type lightbulb at (0.5, 1.5),
+		"Philips Hue #1" is type lightbulb at (2, 2),
+		"Philips Hue #2" is type lightbulb at (4, 2),
+		"Philips Hue #3" is type lightbulb at (2, 4),
+		"Philips Hue #4" is type lightbulb at (4, 4),
+		"Amazon Echo Studio" is type speaker at (0.5, 1.5),
+		"Arlo Pro 4" is type securityCamera at (0, 0),
+		"Eve Energy" is type smartPlug at (0, 3),
+		proximity1 is type proximity at (1.5, 1.5),
+		"home alone 4 curtain mover" is type curtainMotor at (1, 6),
+		"nest learning thermostat (sensor)" is type temperature at (0, 3),
+		"nest learning thermostat (actuator)" is type tempRegulator at (0, 3),
+		"August Smart Lock Pro" is type lock at (0, 0),
+		"mahogany door" is type door at (0, 0)
+	}
+	
+	Bathroom (2 x 3) {
+		
+	}
+	
+	Kitchen (2.5 x 2.5) {
+		"proximity5" is type proximity at (1.25, 1.25),
+		"Philips Hue #5" is type lightbulb at (1.25, 1.25),
+		"inconspicuous government listening device" is type surveillanceRecorder at (2.5, 2.5)
+	}
+}
+
+rules {
+	Autolock (active) {
+		WHEN Studio."mahogany door" = "closed"
+		THEN Studio."August Smart Lock Pro" runs lock.lock
+	}
+	
+	TurnOnLightsInKitchen (active) {
+		WHEN Kitchen."proximity5" <= "5min (last detection)"
+		THEN Kitchen."Philips Hue #5" runs lightbulb.turnOn // if state could be modeled then we don't have to turn it on when it is already turned on
+	}
+	
+	TurnOnLightsInKitchen (active) {
+		WHEN Kitchen."proximity5" > "5min (last detection)"
+		THEN Kitchen."Philips Hue #5" runs lightbulb.turnOff // see above comment
+	}
+}

@@ -818,10 +818,10 @@ public class InternalHalLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHal.g:4427:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalHal.g:4427:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalHal.g:4319:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalHal.g:4319:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalHal.g:4427:11: ( '^' )?
+            // InternalHal.g:4319:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -830,7 +830,7 @@ public class InternalHalLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalHal.g:4427:11: '^'
+                    // InternalHal.g:4319:11: '^'
                     {
                     match('^'); 
 
@@ -848,7 +848,7 @@ public class InternalHalLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalHal.g:4427:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalHal.g:4319:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -897,10 +897,10 @@ public class InternalHalLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHal.g:4429:10: ( ( '0' .. '9' )+ )
-            // InternalHal.g:4429:12: ( '0' .. '9' )+
+            // InternalHal.g:4321:10: ( ( '0' .. '9' )+ )
+            // InternalHal.g:4321:12: ( '0' .. '9' )+
             {
-            // InternalHal.g:4429:12: ( '0' .. '9' )+
+            // InternalHal.g:4321:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -914,7 +914,7 @@ public class InternalHalLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalHal.g:4429:13: '0' .. '9'
+            	    // InternalHal.g:4321:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -946,10 +946,10 @@ public class InternalHalLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHal.g:4431:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalHal.g:4431:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalHal.g:4323:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalHal.g:4323:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalHal.g:4431:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalHal.g:4323:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -967,10 +967,10 @@ public class InternalHalLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalHal.g:4431:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalHal.g:4323:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalHal.g:4431:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalHal.g:4323:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -986,7 +986,7 @@ public class InternalHalLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalHal.g:4431:21: '\\\\' .
+                    	    // InternalHal.g:4323:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -994,7 +994,7 @@ public class InternalHalLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalHal.g:4431:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalHal.g:4323:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1019,10 +1019,10 @@ public class InternalHalLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalHal.g:4431:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalHal.g:4323:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalHal.g:4431:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalHal.g:4323:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1038,7 +1038,7 @@ public class InternalHalLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalHal.g:4431:54: '\\\\' .
+                    	    // InternalHal.g:4323:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1046,7 +1046,7 @@ public class InternalHalLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalHal.g:4431:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalHal.g:4323:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1089,12 +1089,12 @@ public class InternalHalLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHal.g:4433:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalHal.g:4433:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalHal.g:4325:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalHal.g:4325:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalHal.g:4433:24: ( options {greedy=false; } : . )*
+            // InternalHal.g:4325:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1119,7 +1119,7 @@ public class InternalHalLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalHal.g:4433:52: .
+            	    // InternalHal.g:4325:52: .
             	    {
             	    matchAny(); 
 
@@ -1149,12 +1149,12 @@ public class InternalHalLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHal.g:4435:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalHal.g:4435:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalHal.g:4327:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalHal.g:4327:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalHal.g:4435:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalHal.g:4327:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1167,7 +1167,7 @@ public class InternalHalLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalHal.g:4435:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalHal.g:4327:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1187,7 +1187,7 @@ public class InternalHalLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalHal.g:4435:40: ( ( '\\r' )? '\\n' )?
+            // InternalHal.g:4327:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1196,9 +1196,9 @@ public class InternalHalLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalHal.g:4435:41: ( '\\r' )? '\\n'
+                    // InternalHal.g:4327:41: ( '\\r' )? '\\n'
                     {
-                    // InternalHal.g:4435:41: ( '\\r' )?
+                    // InternalHal.g:4327:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1207,7 +1207,7 @@ public class InternalHalLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalHal.g:4435:41: '\\r'
+                            // InternalHal.g:4327:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1239,10 +1239,10 @@ public class InternalHalLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHal.g:4437:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalHal.g:4437:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalHal.g:4329:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalHal.g:4329:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalHal.g:4437:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalHal.g:4329:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1296,8 +1296,8 @@ public class InternalHalLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalHal.g:4439:16: ( . )
-            // InternalHal.g:4439:18: .
+            // InternalHal.g:4331:16: ( . )
+            // InternalHal.g:4331:18: .
             {
             matchAny(); 
 

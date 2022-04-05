@@ -25,7 +25,8 @@ public class HalSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_HAL___RoomsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q;
 	protected AbstractElementAlias match_HAL___RulesKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q;
 	protected AbstractElementAlias match_HAL___SensorEntriesKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q;
-	protected AbstractElementAlias match_HAL___TypesKeyword_4_0_LeftCurlyBracketKeyword_4_1___ActuatorsKeyword_4_3_0_LeftCurlyBracketKeyword_4_3_1_RightCurlyBracketKeyword_4_3_3__q_RightCurlyBracketKeyword_4_4__q;
+	protected AbstractElementAlias match_HAL___SensorsKeyword_4_2_0_LeftCurlyBracketKeyword_4_2_1_RightCurlyBracketKeyword_4_2_3__q;
+	protected AbstractElementAlias match_HAL___TypesKeyword_4_0_LeftCurlyBracketKeyword_4_1___SensorsKeyword_4_2_0_LeftCurlyBracketKeyword_4_2_1_RightCurlyBracketKeyword_4_2_3__q___ActuatorsKeyword_4_3_0_LeftCurlyBracketKeyword_4_3_1_RightCurlyBracketKeyword_4_3_3__q_RightCurlyBracketKeyword_4_4__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -34,7 +35,8 @@ public class HalSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_HAL___RoomsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHALAccess().getRoomsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getHALAccess().getLeftCurlyBracketKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getHALAccess().getRightCurlyBracketKeyword_5_3()));
 		match_HAL___RulesKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHALAccess().getRulesKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getHALAccess().getLeftCurlyBracketKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getHALAccess().getRightCurlyBracketKeyword_6_3()));
 		match_HAL___SensorEntriesKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHALAccess().getSensorEntriesKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getHALAccess().getLeftCurlyBracketKeyword_7_1()), new TokenAlias(false, false, grammarAccess.getHALAccess().getRightCurlyBracketKeyword_7_3()));
-		match_HAL___TypesKeyword_4_0_LeftCurlyBracketKeyword_4_1___ActuatorsKeyword_4_3_0_LeftCurlyBracketKeyword_4_3_1_RightCurlyBracketKeyword_4_3_3__q_RightCurlyBracketKeyword_4_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHALAccess().getTypesKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getHALAccess().getLeftCurlyBracketKeyword_4_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHALAccess().getActuatorsKeyword_4_3_0()), new TokenAlias(false, false, grammarAccess.getHALAccess().getLeftCurlyBracketKeyword_4_3_1()), new TokenAlias(false, false, grammarAccess.getHALAccess().getRightCurlyBracketKeyword_4_3_3())), new TokenAlias(false, false, grammarAccess.getHALAccess().getRightCurlyBracketKeyword_4_4()));
+		match_HAL___SensorsKeyword_4_2_0_LeftCurlyBracketKeyword_4_2_1_RightCurlyBracketKeyword_4_2_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHALAccess().getSensorsKeyword_4_2_0()), new TokenAlias(false, false, grammarAccess.getHALAccess().getLeftCurlyBracketKeyword_4_2_1()), new TokenAlias(false, false, grammarAccess.getHALAccess().getRightCurlyBracketKeyword_4_2_3()));
+		match_HAL___TypesKeyword_4_0_LeftCurlyBracketKeyword_4_1___SensorsKeyword_4_2_0_LeftCurlyBracketKeyword_4_2_1_RightCurlyBracketKeyword_4_2_3__q___ActuatorsKeyword_4_3_0_LeftCurlyBracketKeyword_4_3_1_RightCurlyBracketKeyword_4_3_3__q_RightCurlyBracketKeyword_4_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHALAccess().getTypesKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getHALAccess().getLeftCurlyBracketKeyword_4_1()), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHALAccess().getSensorsKeyword_4_2_0()), new TokenAlias(false, false, grammarAccess.getHALAccess().getLeftCurlyBracketKeyword_4_2_1()), new TokenAlias(false, false, grammarAccess.getHALAccess().getRightCurlyBracketKeyword_4_2_3())), new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getHALAccess().getActuatorsKeyword_4_3_0()), new TokenAlias(false, false, grammarAccess.getHALAccess().getLeftCurlyBracketKeyword_4_3_1()), new TokenAlias(false, false, grammarAccess.getHALAccess().getRightCurlyBracketKeyword_4_3_3())), new TokenAlias(false, false, grammarAccess.getHALAccess().getRightCurlyBracketKeyword_4_4()));
 	}
 	
 	@Override
@@ -57,8 +59,10 @@ public class HalSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_HAL___RulesKeyword_6_0_LeftCurlyBracketKeyword_6_1_RightCurlyBracketKeyword_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_HAL___SensorEntriesKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q.equals(syntax))
 				emit_HAL___SensorEntriesKeyword_7_0_LeftCurlyBracketKeyword_7_1_RightCurlyBracketKeyword_7_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_HAL___TypesKeyword_4_0_LeftCurlyBracketKeyword_4_1___ActuatorsKeyword_4_3_0_LeftCurlyBracketKeyword_4_3_1_RightCurlyBracketKeyword_4_3_3__q_RightCurlyBracketKeyword_4_4__q.equals(syntax))
-				emit_HAL___TypesKeyword_4_0_LeftCurlyBracketKeyword_4_1___ActuatorsKeyword_4_3_0_LeftCurlyBracketKeyword_4_3_1_RightCurlyBracketKeyword_4_3_3__q_RightCurlyBracketKeyword_4_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HAL___SensorsKeyword_4_2_0_LeftCurlyBracketKeyword_4_2_1_RightCurlyBracketKeyword_4_2_3__q.equals(syntax))
+				emit_HAL___SensorsKeyword_4_2_0_LeftCurlyBracketKeyword_4_2_1_RightCurlyBracketKeyword_4_2_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_HAL___TypesKeyword_4_0_LeftCurlyBracketKeyword_4_1___SensorsKeyword_4_2_0_LeftCurlyBracketKeyword_4_2_1_RightCurlyBracketKeyword_4_2_3__q___ActuatorsKeyword_4_3_0_LeftCurlyBracketKeyword_4_3_1_RightCurlyBracketKeyword_4_3_3__q_RightCurlyBracketKeyword_4_4__q.equals(syntax))
+				emit_HAL___TypesKeyword_4_0_LeftCurlyBracketKeyword_4_1___SensorsKeyword_4_2_0_LeftCurlyBracketKeyword_4_2_1_RightCurlyBracketKeyword_4_2_3__q___ActuatorsKeyword_4_3_0_LeftCurlyBracketKeyword_4_3_1_RightCurlyBracketKeyword_4_3_3__q_RightCurlyBracketKeyword_4_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -86,9 +90,9 @@ public class HalSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('rooms' '{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     address=STRING ('types' '{' ('actuators' '{' '}')? '}')? (ambiguity) 'rules' '{' rules+=AutomationRule
-	 *     address=STRING ('types' '{' ('actuators' '{' '}')? '}')? (ambiguity) ('rules' '{' '}')? 'sensorEntries' '{' entries+=SensorEntry
-	 *     address=STRING ('types' '{' ('actuators' '{' '}')? '}')? (ambiguity) ('rules' '{' '}')? ('sensorEntries' '{' '}')? (rule end)
+	 *     address=STRING ('types' '{' ('sensors' '{' '}')? ('actuators' '{' '}')? '}')? (ambiguity) 'rules' '{' rules+=AutomationRule
+	 *     address=STRING ('types' '{' ('sensors' '{' '}')? ('actuators' '{' '}')? '}')? (ambiguity) ('rules' '{' '}')? 'sensorEntries' '{' entries+=SensorEntry
+	 *     address=STRING ('types' '{' ('sensors' '{' '}')? ('actuators' '{' '}')? '}')? (ambiguity) ('rules' '{' '}')? ('sensorEntries' '{' '}')? (rule end)
 	 *     types+=Actuator '}' '}' (ambiguity) 'rules' '{' rules+=AutomationRule
 	 *     types+=Actuator '}' '}' (ambiguity) ('rules' '{' '}')? 'sensorEntries' '{' entries+=SensorEntry
 	 *     types+=Actuator '}' '}' (ambiguity) ('rules' '{' '}')? ('sensorEntries' '{' '}')? (rule end)
@@ -108,8 +112,8 @@ public class HalSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('rules' '{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     address=STRING ('types' '{' ('actuators' '{' '}')? '}')? ('rooms' '{' '}')? (ambiguity) 'sensorEntries' '{' entries+=SensorEntry
-	 *     address=STRING ('types' '{' ('actuators' '{' '}')? '}')? ('rooms' '{' '}')? (ambiguity) ('sensorEntries' '{' '}')? (rule end)
+	 *     address=STRING ('types' '{' ('sensors' '{' '}')? ('actuators' '{' '}')? '}')? ('rooms' '{' '}')? (ambiguity) 'sensorEntries' '{' entries+=SensorEntry
+	 *     address=STRING ('types' '{' ('sensors' '{' '}')? ('actuators' '{' '}')? '}')? ('rooms' '{' '}')? (ambiguity) ('sensorEntries' '{' '}')? (rule end)
 	 *     rooms+=Room '}' (ambiguity) 'sensorEntries' '{' entries+=SensorEntry
 	 *     rooms+=Room '}' (ambiguity) ('sensorEntries' '{' '}')? (rule end)
 	 *     types+=Actuator '}' '}' ('rooms' '{' '}')? (ambiguity) 'sensorEntries' '{' entries+=SensorEntry
@@ -129,7 +133,7 @@ public class HalSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('sensorEntries' '{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     address=STRING ('types' '{' ('actuators' '{' '}')? '}')? ('rooms' '{' '}')? ('rules' '{' '}')? (ambiguity) (rule end)
+	 *     address=STRING ('types' '{' ('sensors' '{' '}')? ('actuators' '{' '}')? '}')? ('rooms' '{' '}')? ('rules' '{' '}')? (ambiguity) (rule end)
 	 *     rooms+=Room '}' ('rules' '{' '}')? (ambiguity) (rule end)
 	 *     rules+=AutomationRule '}' (ambiguity) (rule end)
 	 *     types+=Actuator '}' '}' ('rooms' '{' '}')? ('rules' '{' '}')? (ambiguity) (rule end)
@@ -144,7 +148,21 @@ public class HalSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     ('types' '{' ('actuators' '{' '}')? '}')?
+	 *     ('sensors' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     address=STRING 'types' '{' (ambiguity) 'actuators' '{' types+=Actuator
+	 
+	 * </pre>
+	 */
+	protected void emit_HAL___SensorsKeyword_4_2_0_LeftCurlyBracketKeyword_4_2_1_RightCurlyBracketKeyword_4_2_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('types' '{' ('sensors' '{' '}')? ('actuators' '{' '}')? '}')?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     address=STRING (ambiguity) 'rooms' '{' rooms+=Room
@@ -154,7 +172,7 @@ public class HalSyntacticSequencer extends AbstractSyntacticSequencer {
 	 
 	 * </pre>
 	 */
-	protected void emit_HAL___TypesKeyword_4_0_LeftCurlyBracketKeyword_4_1___ActuatorsKeyword_4_3_0_LeftCurlyBracketKeyword_4_3_1_RightCurlyBracketKeyword_4_3_3__q_RightCurlyBracketKeyword_4_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_HAL___TypesKeyword_4_0_LeftCurlyBracketKeyword_4_1___SensorsKeyword_4_2_0_LeftCurlyBracketKeyword_4_2_1_RightCurlyBracketKeyword_4_2_3__q___ActuatorsKeyword_4_3_0_LeftCurlyBracketKeyword_4_3_1_RightCurlyBracketKeyword_4_3_3__q_RightCurlyBracketKeyword_4_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

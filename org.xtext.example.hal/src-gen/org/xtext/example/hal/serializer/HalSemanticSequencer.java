@@ -161,7 +161,7 @@ public class HalSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, HalPackage.Literals.COMMAND__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCommandAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getCommandAccess().getNameQualifiedNameParserRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -288,7 +288,7 @@ public class HalSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, HalPackage.Literals.DEVICE_TYPE__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSensorAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSensorAccess().getNameQualifiedNameParserRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

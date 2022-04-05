@@ -6,7 +6,6 @@ package org.xtext.example.hal.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
-import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
@@ -41,13 +40,14 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
 		private final Keyword cSensorsKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_2_1 = (Keyword)cGroup_4_2.eContents().get(1);
-		private final Assignment cTypesAssignment_4_2_2 = (Assignment)cGroup_4_2.eContents().get(2);
-		private final RuleCall cTypesSensorParserRuleCall_4_2_2_0 = (RuleCall)cTypesAssignment_4_2_2.eContents().get(0);
-		private final Group cGroup_4_2_3 = (Group)cGroup_4_2.eContents().get(3);
-		private final Keyword cCommaKeyword_4_2_3_0 = (Keyword)cGroup_4_2_3.eContents().get(0);
-		private final Assignment cTypesAssignment_4_2_3_1 = (Assignment)cGroup_4_2_3.eContents().get(1);
-		private final RuleCall cTypesSensorParserRuleCall_4_2_3_1_0 = (RuleCall)cTypesAssignment_4_2_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_2_4 = (Keyword)cGroup_4_2.eContents().get(4);
+		private final Group cGroup_4_2_2 = (Group)cGroup_4_2.eContents().get(2);
+		private final Assignment cTypesAssignment_4_2_2_0 = (Assignment)cGroup_4_2_2.eContents().get(0);
+		private final RuleCall cTypesSensorParserRuleCall_4_2_2_0_0 = (RuleCall)cTypesAssignment_4_2_2_0.eContents().get(0);
+		private final Group cGroup_4_2_2_1 = (Group)cGroup_4_2_2.eContents().get(1);
+		private final Keyword cCommaKeyword_4_2_2_1_0 = (Keyword)cGroup_4_2_2_1.eContents().get(0);
+		private final Assignment cTypesAssignment_4_2_2_1_1 = (Assignment)cGroup_4_2_2_1.eContents().get(1);
+		private final RuleCall cTypesSensorParserRuleCall_4_2_2_1_1_0 = (RuleCall)cTypesAssignment_4_2_2_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_2_3 = (Keyword)cGroup_4_2.eContents().get(3);
 		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
 		private final Keyword cActuatorsKeyword_4_3_0 = (Keyword)cGroup_4_3.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4_3_1 = (Keyword)cGroup_4_3.eContents().get(1);
@@ -78,12 +78,12 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//    'password' password=STRING
 		//    'address' address=STRING
 		//    ('types' '{'
-		//        ('sensors' '{'
-		//            types+=Sensor ("," types+=Sensor)*
-		//        '}')?
-		//        ('actuators' '{'
-		//            types+=Actuator*
-		//        '}')?
+		//    ('sensors' '{'
+		//    (types+=Sensor (',' types+=Sensor)*)?
+		//    '}')?
+		//    ('actuators' '{'
+		//    types+=Actuator*
+		//    '}')?
 		//    '}')?
 		//    ('rooms' '{' rooms+=Room* '}')?
 		//    ('rules' '{' rules+=AutomationRule* '}')?
@@ -93,12 +93,12 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'password' password=STRING
 		//'address' address=STRING
 		//('types' '{'
-		//    ('sensors' '{'
-		//        types+=Sensor ("," types+=Sensor)*
-		//    '}')?
-		//    ('actuators' '{'
-		//        types+=Actuator*
-		//    '}')?
+		//('sensors' '{'
+		//(types+=Sensor (',' types+=Sensor)*)?
+		//'}')?
+		//('actuators' '{'
+		//types+=Actuator*
+		//'}')?
 		//'}')?
 		//('rooms' '{' rooms+=Room* '}')?
 		//('rules' '{' rules+=AutomationRule* '}')?
@@ -124,12 +124,12 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		public RuleCall getAddressSTRINGTerminalRuleCall_3_0() { return cAddressSTRINGTerminalRuleCall_3_0; }
 		
 		//('types' '{'
-		//    ('sensors' '{'
-		//        types+=Sensor ("," types+=Sensor)*
-		//    '}')?
-		//    ('actuators' '{'
-		//        types+=Actuator*
-		//    '}')?
+		//('sensors' '{'
+		//(types+=Sensor (',' types+=Sensor)*)?
+		//'}')?
+		//('actuators' '{'
+		//types+=Actuator*
+		//'}')?
 		//'}')?
 		public Group getGroup_4() { return cGroup_4; }
 		
@@ -140,7 +140,7 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		public Keyword getLeftCurlyBracketKeyword_4_1() { return cLeftCurlyBracketKeyword_4_1; }
 		
 		//('sensors' '{'
-		//    types+=Sensor ("," types+=Sensor)*
+		//(types+=Sensor (',' types+=Sensor)*)?
 		//'}')?
 		public Group getGroup_4_2() { return cGroup_4_2; }
 		
@@ -150,29 +150,32 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4_2_1() { return cLeftCurlyBracketKeyword_4_2_1; }
 		
-		//types+=Sensor
-		public Assignment getTypesAssignment_4_2_2() { return cTypesAssignment_4_2_2; }
-		
-		//Sensor
-		public RuleCall getTypesSensorParserRuleCall_4_2_2_0() { return cTypesSensorParserRuleCall_4_2_2_0; }
-		
-		//("," types+=Sensor)*
-		public Group getGroup_4_2_3() { return cGroup_4_2_3; }
-		
-		//","
-		public Keyword getCommaKeyword_4_2_3_0() { return cCommaKeyword_4_2_3_0; }
+		//(types+=Sensor (',' types+=Sensor)*)?
+		public Group getGroup_4_2_2() { return cGroup_4_2_2; }
 		
 		//types+=Sensor
-		public Assignment getTypesAssignment_4_2_3_1() { return cTypesAssignment_4_2_3_1; }
+		public Assignment getTypesAssignment_4_2_2_0() { return cTypesAssignment_4_2_2_0; }
 		
 		//Sensor
-		public RuleCall getTypesSensorParserRuleCall_4_2_3_1_0() { return cTypesSensorParserRuleCall_4_2_3_1_0; }
+		public RuleCall getTypesSensorParserRuleCall_4_2_2_0_0() { return cTypesSensorParserRuleCall_4_2_2_0_0; }
+		
+		//(',' types+=Sensor)*
+		public Group getGroup_4_2_2_1() { return cGroup_4_2_2_1; }
+		
+		//','
+		public Keyword getCommaKeyword_4_2_2_1_0() { return cCommaKeyword_4_2_2_1_0; }
+		
+		//types+=Sensor
+		public Assignment getTypesAssignment_4_2_2_1_1() { return cTypesAssignment_4_2_2_1_1; }
+		
+		//Sensor
+		public RuleCall getTypesSensorParserRuleCall_4_2_2_1_1_0() { return cTypesSensorParserRuleCall_4_2_2_1_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4_2_4() { return cRightCurlyBracketKeyword_4_2_4; }
+		public Keyword getRightCurlyBracketKeyword_4_2_3() { return cRightCurlyBracketKeyword_4_2_3; }
 		
 		//('actuators' '{'
-		//    types+=Actuator*
+		//types+=Actuator*
 		//'}')?
 		public Group getGroup_4_3() { return cGroup_4_3; }
 		
@@ -359,7 +362,7 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//    width=PosFloat
 		//    ')'
 		//    '{'
-		//    (devices+=Device ("," devices+=Device)*)?
+		//    (devices+=Device (',' devices+=Device)*)?
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -370,7 +373,7 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//width=PosFloat
 		//')'
 		//'{'
-		//(devices+=Device ("," devices+=Device)*)?
+		//(devices+=Device (',' devices+=Device)*)?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -404,7 +407,7 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
 		
-		//(devices+=Device ("," devices+=Device)*)?
+		//(devices+=Device (',' devices+=Device)*)?
 		public Group getGroup_7() { return cGroup_7; }
 		
 		//devices+=Device
@@ -413,10 +416,10 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//Device
 		public RuleCall getDevicesDeviceParserRuleCall_7_0_0() { return cDevicesDeviceParserRuleCall_7_0_0; }
 		
-		//("," devices+=Device)*
+		//(',' devices+=Device)*
 		public Group getGroup_7_1() { return cGroup_7_1; }
 		
-		//","
+		//','
 		public Keyword getCommaKeyword_7_1_0() { return cCommaKeyword_7_1_0; }
 		
 		//devices+=Device
@@ -456,7 +459,7 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//    ('(' active?='active' ')')?
 		//    '{'
 		//    'WHEN' precondition=BooleanExpression
-		//    'THEN' actions+=Action ("," actions+=Action)*
+		//    'THEN' actions+=Action (',' actions+=Action)*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -464,7 +467,7 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//('(' active?='active' ')')?
 		//'{'
 		//'WHEN' precondition=BooleanExpression
-		//'THEN' actions+=Action ("," actions+=Action)*
+		//'THEN' actions+=Action (',' actions+=Action)*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -510,10 +513,10 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//Action
 		public RuleCall getActionsActionParserRuleCall_6_0() { return cActionsActionParserRuleCall_6_0; }
 		
-		//("," actions+=Action)*
+		//(',' actions+=Action)*
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//","
+		//','
 		public Keyword getCommaKeyword_7_0() { return cCommaKeyword_7_0; }
 		
 		//actions+=Action
@@ -881,120 +884,94 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	public class CommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.hal.Hal.Command");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cCommandAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
 		//Command:
-		//    {Command}
 		//    name=QualifiedName;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Command}
 		//name=QualifiedName
-		public Group getGroup() { return cGroup; }
-		
-		//{Command}
-		public Action getCommandAction_0() { return cCommandAction_0; }
-		
-		//name=QualifiedName
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment() { return cNameAssignment; }
 		
 		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+		public RuleCall getNameQualifiedNameParserRuleCall_0() { return cNameQualifiedNameParserRuleCall_0; }
 	}
 	public class SensorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.hal.Hal.Sensor");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cSensorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
 		//Sensor:
-		//    {Sensor}
 		//    name=QualifiedName;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Sensor}
 		//name=QualifiedName
-		public Group getGroup() { return cGroup; }
-		
-		//{Sensor}
-		public Action getSensorAction_0() { return cSensorAction_0; }
-		
-		//name=QualifiedName
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment() { return cNameAssignment; }
 		
 		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+		public RuleCall getNameQualifiedNameParserRuleCall_0() { return cNameQualifiedNameParserRuleCall_0; }
 	}
 	public class ActuatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.hal.Hal.Actuator");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cActuatorAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cCommandsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final RuleCall cCommandsCommandParserRuleCall_3_0_0 = (RuleCall)cCommandsAssignment_3_0.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
-		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cCommandsAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cCommandsCommandParserRuleCall_3_1_1_0 = (RuleCall)cCommandsAssignment_3_1_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameQualifiedNameParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cCommandsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cCommandsCommandParserRuleCall_2_0_0 = (RuleCall)cCommandsAssignment_2_0.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Keyword cCommaKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
+		private final Assignment cCommandsAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cCommandsCommandParserRuleCall_2_1_1_0 = (RuleCall)cCommandsAssignment_2_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Actuator:
-		//    {Actuator}
 		//    name=QualifiedName
 		//    '{'
 		//    (commands+=Command ("," commands+=Command)*)?
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Actuator}
 		//name=QualifiedName
 		//'{'
 		//(commands+=Command ("," commands+=Command)*)?
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//{Actuator}
-		public Action getActuatorAction_0() { return cActuatorAction_0; }
-		
 		//name=QualifiedName
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+		public RuleCall getNameQualifiedNameParserRuleCall_0_0() { return cNameQualifiedNameParserRuleCall_0_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
 		
 		//(commands+=Command ("," commands+=Command)*)?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//commands+=Command
-		public Assignment getCommandsAssignment_3_0() { return cCommandsAssignment_3_0; }
+		public Assignment getCommandsAssignment_2_0() { return cCommandsAssignment_2_0; }
 		
 		//Command
-		public RuleCall getCommandsCommandParserRuleCall_3_0_0() { return cCommandsCommandParserRuleCall_3_0_0; }
+		public RuleCall getCommandsCommandParserRuleCall_2_0_0() { return cCommandsCommandParserRuleCall_2_0_0; }
 		
 		//("," commands+=Command)*
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//","
-		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
+		public Keyword getCommaKeyword_2_1_0() { return cCommaKeyword_2_1_0; }
 		
 		//commands+=Command
-		public Assignment getCommandsAssignment_3_1_1() { return cCommandsAssignment_3_1_1; }
+		public Assignment getCommandsAssignment_2_1_1() { return cCommandsAssignment_2_1_1; }
 		
 		//Command
-		public RuleCall getCommandsCommandParserRuleCall_3_1_1_0() { return cCommandsCommandParserRuleCall_3_1_1_0; }
+		public RuleCall getCommandsCommandParserRuleCall_2_1_1_0() { return cCommandsCommandParserRuleCall_2_1_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 	public class ELongElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.hal.Hal.ELong");
@@ -1176,12 +1153,12 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    'password' password=STRING
 	//    'address' address=STRING
 	//    ('types' '{'
-	//        ('sensors' '{'
-	//            types+=Sensor ("," types+=Sensor)*
-	//        '}')?
-	//        ('actuators' '{'
-	//            types+=Actuator*
-	//        '}')?
+	//    ('sensors' '{'
+	//    (types+=Sensor (',' types+=Sensor)*)?
+	//    '}')?
+	//    ('actuators' '{'
+	//    types+=Actuator*
+	//    '}')?
 	//    '}')?
 	//    ('rooms' '{' rooms+=Room* '}')?
 	//    ('rules' '{' rules+=AutomationRule* '}')?
@@ -1232,7 +1209,7 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    width=PosFloat
 	//    ')'
 	//    '{'
-	//    (devices+=Device ("," devices+=Device)*)?
+	//    (devices+=Device (',' devices+=Device)*)?
 	//    '}';
 	public RoomElements getRoomAccess() {
 		return pRoom;
@@ -1247,7 +1224,7 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    ('(' active?='active' ')')?
 	//    '{'
 	//    'WHEN' precondition=BooleanExpression
-	//    'THEN' actions+=Action ("," actions+=Action)*
+	//    'THEN' actions+=Action (',' actions+=Action)*
 	//    '}';
 	public AutomationRuleElements getAutomationRuleAccess() {
 		return pAutomationRule;
@@ -1359,7 +1336,6 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Command:
-	//    {Command}
 	//    name=QualifiedName;
 	public CommandElements getCommandAccess() {
 		return pCommand;
@@ -1370,7 +1346,6 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Sensor:
-	//    {Sensor}
 	//    name=QualifiedName;
 	public SensorElements getSensorAccess() {
 		return pSensor;
@@ -1381,7 +1356,6 @@ public class HalGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	}
 	
 	//Actuator:
-	//    {Actuator}
 	//    name=QualifiedName
 	//    '{'
 	//    (commands+=Command ("," commands+=Command)*)?
