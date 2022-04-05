@@ -15,8 +15,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.model;bundle-version="3.3.0",
  org.eclipse.acceleo.profiler;bundle-version="3.3.0",
  org.eclipse.acceleo.engine;bundle-version="3.3.0",
- com.google.guava
- HAL
+ com.google.guava,
+ org.xtext.example.hal
 Bundle-RequiredExecutionEnvironment: JavaSE-14
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
