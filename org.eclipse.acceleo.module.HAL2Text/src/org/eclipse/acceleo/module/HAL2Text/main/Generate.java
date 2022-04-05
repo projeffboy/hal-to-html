@@ -23,31 +23,33 @@ import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.xtext.example.hal.hal.HalPackage;
 
 /**
  * Entry point of the 'Generate' generation module.
  *
- * @generated
+ * @generated NOT NOT NOT
  */
 public class Generate extends AbstractAcceleoGenerator {
     /**
      * The name of the module.
      *
-     * @generated
+     * @generated NOT NOT NOT
      */
     public static final String MODULE_FILE_NAME = "/org/eclipse/acceleo/module/HAL2Text/main/generate";
     
     /**
      * The name of the templates that are to be generated.
      *
-     * @generated
+     * @generated NOT NOT NOT
      */
     public static final String[] TEMPLATE_NAMES = { "generateElement" };
     
     /**
      * The list of properties files from the launch parameters (Launch configuration).
      *
-     * @generated
+     * @generated NOT NOT NOT
      */
     private List<String> propertiesFiles = new ArrayList<String>();
 
@@ -63,7 +65,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * {@link #getGenerationListeners()}.
      * </p>
      *
-     * @generated
+     * @generated NOT NOT NOT
      */
     public Generate() {
         // Empty implementation
@@ -83,7 +85,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * @throws IOException
      *             This can be thrown in three scenarios : the module cannot be found, it cannot be loaded, or
      *             the model cannot be loaded.
-     * @generated
+     * @generated NOT NOT NOT
      */
     public Generate(URI modelURI, File targetFolder,
             List<? extends Object> arguments) throws IOException {
@@ -104,7 +106,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *            pass them here.
      * @throws IOException
      *             This can be thrown in two scenarios : the module cannot be found, or it cannot be loaded.
-     * @generated
+     * @generated NOT NOT NOT
      */
     public Generate(EObject model, File targetFolder,
             List<? extends Object> arguments) throws IOException {
@@ -116,7 +118,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @param args
      *            Arguments of the generation.
-     * @generated
+     * @generated NOT NOT NOT
      */
     public static void main(String[] args) {
         try {
@@ -129,8 +131,8 @@ public class Generate extends AbstractAcceleoGenerator {
                 List<String> arguments = new ArrayList<String>();
                 
                 /*
-                 * If you want to change the content of this method, do NOT forget to change the "@generated"
-                 * tag in the Javadoc of this method to "@generated NOT". Without this new tag, any compilation
+                 * If you want to change the content of this method, do NOT forget to change the "@generated NOT NOT NOT"
+                 * tag in the Javadoc of this method to "@generated NOT NOT NOT NOT". Without this new tag, any compilation
                  * of the Acceleo module with the main template that has caused the creation of this class will
                  * revert your modifications.
                  */
@@ -171,14 +173,14 @@ public class Generate extends AbstractAcceleoGenerator {
      *            This will be used to display progress information to the user.
      * @throws IOException
      *             This will be thrown if any of the output files cannot be saved to disk.
-     * @generated
+     * @generated NOT NOT NOT
      */
     @Override
     public void doGenerate(Monitor monitor) throws IOException {
         /*
          * TODO if you wish to change the generation as a whole, override this. The default behavior should
          * be sufficient in most cases. If you want to change the content of this method, do NOT forget to
-         * change the "@generated" tag in the Javadoc of this method to "@generated NOT". Without this new tag,
+         * change the "@generated NOT NOT NOT" tag in the Javadoc of this method to "@generated NOT NOT NOT NOT". Without this new tag,
          * any compilation of the Acceleo module with the main template that has caused the creation of this
          * class will revert your modifications. If you encounter a problem with an unresolved proxy during the
          * generation, you can remove the comments in the following instructions to check for problems. Please
@@ -206,15 +208,15 @@ public class Generate extends AbstractAcceleoGenerator {
      * If this generator needs to listen to text generation events, listeners can be returned from here.
      * 
      * @return List of listeners that are to be notified when text is generated through this launch.
-     * @generated
+     * @generated NOT NOT
      */
     @Override
     public List<IAcceleoTextGenerationListener> getGenerationListeners() {
         List<IAcceleoTextGenerationListener> listeners = super.getGenerationListeners();
         /*
          * TODO if you need to listen to generation event, add listeners to the list here. If you want to change
-         * the content of this method, do NOT forget to change the "@generated" tag in the Javadoc of this method
-         * to "@generated NOT". Without this new tag, any compilation of the Acceleo module with the main template
+         * the content of this method, do NOT forget to change the "@generated NOT NOT" tag in the Javadoc of this method
+         * to "@generated NOT NOT NOT". Without this new tag, any compilation of the Acceleo module with the main template
          * that has caused the creation of this class will revert your modifications.
          */
         return listeners;
@@ -239,7 +241,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * </p>
      * 
      * @return The generation strategy that is to be used for generations launched through this launcher.
-     * @generated
+     * @generated NOT NOT
      */
     @Override
     public IAcceleoGenerationStrategy getGenerationStrategy() {
@@ -251,7 +253,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * We expect this name not to contain file extension, and the module to be located beside the launcher.
      * 
      * @return The name of the module that is to be launched.
-     * @generated
+     * @generated NOT NOT
      */
     @Override
     public String getModuleName() {
@@ -265,13 +267,13 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @return The list of properties file we need to add to the generation context.
      * @see java.util.ResourceBundle#getBundle(String)
-     * @generated
+     * @generated NOT NOT
      */
     @Override
     public List<String> getProperties() {
         /*
-         * If you want to change the content of this method, do NOT forget to change the "@generated"
-         * tag in the Javadoc of this method to "@generated NOT". Without this new tag, any compilation
+         * If you want to change the content of this method, do NOT forget to change the "@generated NOT NOT"
+         * tag in the Javadoc of this method to "@generated NOT NOT NOT". Without this new tag, any compilation
          * of the Acceleo module with the main template that has caused the creation of this class will
          * revert your modifications.
          */
@@ -311,7 +313,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @param propertiesFile
      *            The properties file to add.
-     * @generated
+     * @generated NOT NOT
      * @since 3.1
      */
     @Override
@@ -323,7 +325,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * This will be used to get the list of templates that are to be launched by this launcher.
      * 
      * @return The list of templates to call on the module {@link #getModuleName()}.
-     * @generated
+     * @generated NOT NOT
      */
     @Override
     public String[] getTemplateNames() {
@@ -335,15 +337,15 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * @generated NOT NOT
      */
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
         
         /*
-         * If you want to change the content of this method, do NOT forget to change the "@generated"
-         * tag in the Javadoc of this method to "@generated NOT". Without this new tag, any compilation
+         * If you want to change the content of this method, do NOT forget to change the "@generated NOT NOT"
+         * tag in the Javadoc of this method to "@generated NOT NOT NOT". Without this new tag, any compilation
          * of the Acceleo module with the main template that has caused the creation of this class will
          * revert your modifications.
          */
@@ -373,8 +375,9 @@ public class Generate extends AbstractAcceleoGenerator {
          * To learn more about Package Registration, have a look at the Acceleo documentation (Help -> Help Contents).
          */
         if (!isInWorkspace(HalPackage.class)) {
-        	resourceSet.getPackageRegistry().put(HalPackage.eNS_URI, HalPackage.eINSTANCE)
-        }
+        	// The normal package registration if your metamodel is in a plugin.
+        	resourceSet.getPackageRegistry().put(HalPackage.eNS_URI, HalPackage.eINSTANCE);
+        	}
     }
 
     /**
@@ -382,14 +385,14 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * @generated NOT NOT NOT
      */
     @Override
     public void registerResourceFactories(ResourceSet resourceSet) {
         super.registerResourceFactories(resourceSet);
         /*
-         * If you want to change the content of this method, do NOT forget to change the "@generated"
-         * tag in the Javadoc of this method to "@generated NOT". Without this new tag, any compilation
+         * If you want to change the content of this method, do NOT forget to change the "@generated NOT NOT NOT"
+         * tag in the Javadoc of this method to "@generated NOT NOT NOT NOT". Without this new tag, any compilation
          * of the Acceleo module with the main template that has caused the creation of this class will
          * revert your modifications.
          */
@@ -410,7 +413,8 @@ public class Generate extends AbstractAcceleoGenerator {
          * targetting UML models in standalone, you NEED to use the following:
          */ 
         // UMLResourcesUtil.init(resourceSet)
-        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("hal", new XMIResourceFactoryImpl())
+        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().
+        put("hal", new XMIResourceFactoryImpl());
     }
     
 }

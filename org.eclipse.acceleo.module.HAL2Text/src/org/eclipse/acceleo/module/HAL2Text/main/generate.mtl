@@ -2,6 +2,6 @@
 [module generate('http://www.xtext.org/example/hal/HAL')]
 
 
-[template public generateElement(anAction : Action)]
+[template public generateElement(aHal : HAL)]
 [comment @main/]
 [/template]

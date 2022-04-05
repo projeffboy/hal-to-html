@@ -21,4 +21,5 @@ Bundle-RequiredExecutionEnvironment: JavaSE-14
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: org.eclipse.acceleo.module.HAL2Text.main
+Import-Package: org.xtext.example.hal.hal
 
