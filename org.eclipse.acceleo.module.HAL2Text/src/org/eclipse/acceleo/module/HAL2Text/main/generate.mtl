@@ -9,22 +9,74 @@
 
 [template public halPage(aHal : HAL)]
 [file ('HAL.html', false, 'UTF-8')]
-<!doctype html>
-<html lang="en">
+<!DOCTYPE HTML>
 
-<head>
-	<meta charset="utf-8">
-    <title>HAL Editor</title>
-</head>
+<html>
+	<head>
+		<title>HAL Interface</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
 
-<body>
-[comment screen divided vertically in half: left side graphical, right side recreation of A1 interface/]
-[comment Each room has its own div stacked vertically for a canvas created in js/]
-[comment Clickable elements for devices in canvas /]
-</body>
 
-<footer>
-	<p>&copy; ECSE439P 7	2022</p>
-</footer>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="content">
+							<div class="inner">
+								<h1>Home Automation Language</h1>
+								<p>Jeffery Tang	-	Weijing Zhang	-	Tian Han Jiang</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="#Visual">Visual Interface</a></li>
+								<li><a href="#Menu">Menu Interface</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Visual -->
+							<article id="Visual">
+								<h2 class="major">Rooms</h2>
+								<p>Rooms here</p>
+							</article>
+
+						<!-- Contact -->
+							<article id="Menu">
+								<h2 class="major">Menu</h2>
+								<p>Menu here</p>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; ECSE439P 7. Design adapted from: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
 [/file]
 [/template]
