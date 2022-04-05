@@ -16,7 +16,7 @@ public class TextToXMIConverter {
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 
 		// replace absoluteTargetFolderPath with the path to your folder
-		String absoluteTargetFolderPath = "C:/Users/jeffe/github-repos/ECSE439_Project_HAL/examples/";
+		String absoluteTargetFolderPath = "C:/Users/jeffe/github-repos/ECSE439_Project_HAL/xtext/examples/";
 		String inputURI = "file:///" + absoluteTargetFolderPath + "assignment2-examples.hal"; // or real-life.hal
 		String outputURI = "file:///" + absoluteTargetFolderPath + "assignment2-examples.xmi"; // or real-life.xmi
 
