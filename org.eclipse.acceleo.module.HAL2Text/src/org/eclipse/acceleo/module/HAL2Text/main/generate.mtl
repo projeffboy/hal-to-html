@@ -53,14 +53,14 @@
 								<ul style="list-style-type: none; columns: 8; -webkit-columns: 8; -moz-columns: 8;">
 									<li>
 										<label class="switch">
-											<input type="checkbox" onChange="displaySensors()">
+											<input type="checkbox" onChange="displaySensors()" checked>
 											<span class="slider round"></span>
 										</label>
 										<p>Sensor</p>
 									</li>
 									<li>
 										<label class="switch">
-											<input type="checkbox" onChange="displayActuators()">
+											<input type="checkbox" onChange="displayActuators()" checked>
 											<span class="slider round"></span>
 										</label>
 										<p>Actuator</p>
@@ -81,24 +81,26 @@
 
 												[if (device.type.oclIsTypeOf(Sensor))]
 													<div class="sensor" style="position: absolute; top: [device.lengthPos/]px; left: [device.widthPos/]px;">
-														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+														<img class="displayImage" src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>[device.name/]</li>
 																<li>([device.lengthPos/], [device.widthPos/])</li>
-
-																[for (sensorEntry : SensorEntry | aHal.entries)]
-																	<li>reading: [sensorEntry.reading/]</li>
-																	<li>time stamp: [sensorEntry.timeStamp/]</li>
-																[/for]
 																
+																[for (sensorEntry : SensorEntry | aHal.entries)]
+																	[if (sensorEntry.sensor = device)]
+																		<li>reading: [sensorEntry.reading/]</li>
+																		<li>time stamp: [sensorEntry.timeStamp/]</li>
+																	[/if]
+																[/for]
+
 															</ul>
 														</div>
 													</div>
 												[/if]
 												[if (device.type.oclIsTypeOf(Actuator))]
 													<div class="actuator" style="position: absolute; top: [device.lengthPos/]px; left: [device.widthPos/]px">
-														<img src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>[device.name/]</li>
