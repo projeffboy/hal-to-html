@@ -22,11 +22,12 @@
 	}
 
 	.description {
-		color:rgba(0, 0, 0, 0);
+		display: none;
+		color:rgba(220, 220, 220, 1);
 	}
 
-	.description:hover {
-		color:rgba(220, 220, 220, 1);
+	.displayImage:hover + .description{
+		display: block;
 	}
 
 	/* The switch - the box around the slider */
