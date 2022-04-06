@@ -86,7 +86,12 @@
 															<ul>
 																<li>[device.name/]</li>
 																<li>([device.lengthPos/], [device.widthPos/])</li>
-																<li>TODO: list sensor reading</li>
+
+																[for (sensorEntry : SensorEntry | aHal.entries)]
+																	<li>reading: [sensorEntry.reading/]</li>
+																	<li>time stamp: [sensorEntry.timeStamp/]</li>
+																[/for]
+																
 															</ul>
 														</div>
 													</div>
@@ -98,7 +103,11 @@
 															<ul>
 																<li>[device.name/]</li>
 																<li>([device.lengthPos/], [device.widthPos/])</li>
-																<li>TODO: list commands</li>
+							
+																[for (command : Command | (device.type.oclAsType(Actuator)).commands)]
+																<li>[command.name/]</li>
+																[/for]
+
 															</ul>
 														</div>
 													</div>
