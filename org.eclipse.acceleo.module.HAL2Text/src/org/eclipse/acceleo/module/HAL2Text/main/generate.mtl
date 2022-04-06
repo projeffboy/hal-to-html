@@ -88,10 +88,10 @@
 																<li>([device.lengthPos/], [device.widthPos/])</li>
 																
 																[for (sensorEntry : SensorEntry | aHal.entries)]
-																	[if (sensorEntry.sensor = device)]
-																		<li>reading: [sensorEntry.reading/]</li>
-																		<li>time stamp: [sensorEntry.timeStamp/]</li>
-																	[/if]
+																[if (sensorEntry.sensor = device)]
+																<li>reading: [sensorEntry.reading/]</li>
+																<li>time stamp: [sensorEntry.timeStamp/]</li>
+																[/if]
 																[/for]
 
 															</ul>
@@ -150,6 +150,22 @@
 									</tr>
 									[/for]
 								</table>
+
+
+								<h2 class="major">Automation rule</h2>
+								<!-- Automation rule-->	
+								<table>
+									<tr>
+										<th>Name</th>
+										<th>Rule</th>
+									</tr>
+								
+									[for (r : AutomationRule | rules)]
+										[rule()/]
+									[/for]
+									
+								</table>							
+								
 							</article>
 
 					</div>
@@ -196,4 +212,35 @@
 	</body>
 </html>
 [/file]
+[/template]
+
+[template public rule(aRule : AutomationRule)]
+<tr>
+	<td>
+	[aRule.name/]
+	</td>
+	<td>
+	WHEN
+	   [expression(aRule.precondition)/]<br/>
+	THEN
+	   [for (anAction : Action | aRule.actions)]<br/>[action()/][/for]
+	</td>
+</tr>
+[/template]
+
+[template public expression(anExpression : BooleanExpression)]
+[if (anExpression.negated)]NOT ([/if][if (anExpression.oclIsTypeOf(AtomicRelationalTerm))][atomicTerm(anExpression.oclAsType(AtomicRelationalTerm))/][else][compoundTerm(anExpression.oclAsType(CompoundRelationalTerm))/][/if][if (anExpression.negated)])[/if]
+[/template]
+
+[template public atomicTerm(aTerm : AtomicRelationalTerm)]
+[aTerm.sensor.name/] IN [aTerm.sensor.eContainer().oclAsType(Room).name/] [aTerm.operator/] [aTerm.comparedAgainstValue/]
+[/template]
+
+[template public compoundTerm(aTerm : CompoundRelationalTerm)]
+([expression(aTerm.LHS)/]
+[aTerm.operator/] [expression(aTerm.RHS)/])
+[/template]
+
+[template public action(anAction : Action)]
+[anAction.actuator.name/].[anAction.command.name/] IN [anAction.actuator.eContainer().oclAsType(Room).name/]
 [/template]
