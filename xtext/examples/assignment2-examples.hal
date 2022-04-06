@@ -81,8 +81,19 @@ rules {
 }
 
 sensorEntries {
-	"Living Room".heater {
+	"Living Room"."temperature sensor #1" {
 		reading "20.434854765 celsius"
 		timestamp 1649049856
 	}
+
+	"Living Room".window {
+		reading "closed"
+		timestamp 1649204544
+	}
+
+	"Living Room".window {
+		reading "open"
+		timestamp 1649204544
+	}
+
 }
