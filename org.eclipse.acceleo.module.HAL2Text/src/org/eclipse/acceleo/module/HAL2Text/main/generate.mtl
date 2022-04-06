@@ -220,16 +220,22 @@
 	[aRule.name/]
 	</td>
 	<td>
-	WHEN
+	<b>WHEN</b>
 	   [expression(aRule.precondition)/]<br/>
-	THEN
+	<b>THEN</b>
 	   [for (anAction : Action | aRule.actions)]<br/>[action()/][/for]
 	</td>
 </tr>
 [/template]
 
 [template public expression(anExpression : BooleanExpression)]
-[if (anExpression.negated)]NOT ([/if][if (anExpression.oclIsTypeOf(AtomicRelationalTerm))][atomicTerm(anExpression.oclAsType(AtomicRelationalTerm))/][else][compoundTerm(anExpression.oclAsType(CompoundRelationalTerm))/][/if][if (anExpression.negated)])[/if]
+[if (anExpression.negated)]NOT ([/if]
+		[if (anExpression.oclIsTypeOf(AtomicRelationalTerm))]
+		[atomicTerm(anExpression.oclAsType(AtomicRelationalTerm))/]
+		[else][compoundTerm(anExpression.oclAsType(CompoundRelationalTerm))/]
+		[/if]
+[if (anExpression.negated)])
+[/if]
 [/template]
 
 [template public atomicTerm(aTerm : AtomicRelationalTerm)]
