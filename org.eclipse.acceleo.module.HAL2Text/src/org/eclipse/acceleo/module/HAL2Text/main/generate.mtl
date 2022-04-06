@@ -164,7 +164,7 @@
 			<script>
 				function displaySensors() {
 					var x = document.getElementsByClassName("sensor");
-					if (window.getComputedStyle(x).display === "none") {
+					if (window.getComputedStyle(x[ '[' /]0[ ']' /]).display === "none") {
 						document.querySelectorAll(".sensor").forEach(a=>a.style.display = "block");
 					}
 					else {
@@ -174,7 +174,7 @@
 
 				function displayActuators() {
 					var x = document.getElementsByClassName("actuator");
-					if (window.getComputedStyle(x).display === "none") {
+					if (window.getComputedStyle(x[ '[' /]0[ ']' /]).display === "none") {
 						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "block");
 					}
 					else {
