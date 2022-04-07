@@ -1,0 +1,1 @@
+we put our Acceleo source and target files in the /xtext/examples folder
