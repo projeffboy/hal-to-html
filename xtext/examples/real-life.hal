@@ -79,7 +79,7 @@ rooms {
 	
 	Kitchen (2.5 x 2.5) {
 		"proximity5" is type proximity at (1.25, 1.25),
-		'Philips Hue #5' is type lightbulb at (1.25, 1.25),
+		"Philips Hue #5" is type lightbulb at (1.25, 1.25),
 		"inconspicuous government listening device" is type surveillanceRecorder at (2.5, 2.5)
 	}
 }
@@ -92,11 +92,11 @@ rules {
 	
 	TurnOnLightsInKitchen (active) {
 		WHEN Kitchen."proximity5" <= "5min (last detection)"
-		THEN Kitchen.'Philips Hue #5' runs lightbulb.turnOn // if state could be modeled then we don't have to turn it on when it is already turned on
+		THEN Kitchen."Philips Hue #5" runs lightbulb.turnOn // if state could be modeled then we don't have to turn it on when it is already turned on
 	}
 	
 	TurnOnLightsInKitchen (active) {
 		WHEN Kitchen."proximity5" > "5min (last detection)"
-		THEN Kitchen.'Philips Hue #5' runs lightbulb.turnOff // see above comment
+		THEN Kitchen."Philips Hue #5" runs lightbulb.turnOff // see above comment
 	}
 }
