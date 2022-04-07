@@ -128,8 +128,28 @@
 							<article id="Menu">
 								<h2 class="major">Menu</h2>
 
+								<!-- Select shown device-->
+								<select id="selectDevice">
+									<li>
+										<option value="">Show all</option>
+									</li>
+									[for (room : Room | rooms)]
+										[for (device : Device | room.devices)]
+											<li>
+												<!-- option value: roomName, roomLen, roomWidth, deviceType, deviceName, deviceLen, deviceWidth -->
+												<option value='[roomInfo(room) + ': ' + deviceInfo(device)/]'> 
+													[room.name + ' ' + device.name/]
+												</option>
+											</li>
+										[/for]
+									[/for]
+								</select>
+								<br/>
+								<table id="result" style="display:none">
+								</table>
+	
 								<!-- Room Table -->
-								<table>
+								<table id="allDevices">
 									<tr>
 										<th>Rooms</th>
 										<th>Devices</th>
@@ -140,10 +160,10 @@
 										<td>
 											[for (device : Device | room.devices)]
 												[if (device.type.oclIsTypeOf(Sensor))]
-													Sensor	|	[device.name/]	|	([device.lengthPos/], [device.lengthPos/]) <br>
+													Sensor	|	[device.name/]	|	([device.lengthPos/], [device.widthPos/]) <br>
 												[/if]
 												[if (device.type.oclIsTypeOf(Actuator))]
-													Actuator	|	[device.name/]	|	([device.lengthPos/], [device.lengthPos/]) <br>
+													Actuator	|	[device.name/]	|	([device.lengthPos/], [device.widthPos/]) <br>
 												[/if]
 											[/for]
 										</td>
@@ -208,6 +228,20 @@
 						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "none");
   					}
 				}
+
+				$("#selectDevice").change(function(){
+					
+					var device = $("#selectDevice").val();
+					$("#result").text(device);
+
+					if(device != ""){
+						$("#allDevices").hide();
+						$("#result").show();
+					}else{
+						$("#allDevices").show();
+						$("#result").hide();
+					}
+				})
 			</script>
 	</body>
 </html>
@@ -229,13 +263,8 @@
 [/template]
 
 [template public expression(anExpression : BooleanExpression)]
-[if (anExpression.negated)]NOT ([/if]
-		[if (anExpression.oclIsTypeOf(AtomicRelationalTerm))]
-		[atomicTerm(anExpression.oclAsType(AtomicRelationalTerm))/]
-		[else][compoundTerm(anExpression.oclAsType(CompoundRelationalTerm))/]
-		[/if]
-[if (anExpression.negated)])
-[/if]
+[if (anExpression.negated)]NOT ([/if][if (anExpression.oclIsTypeOf(AtomicRelationalTerm))][atomicTerm(anExpression.oclAsType(AtomicRelationalTerm))/][else][compoundTerm(anExpression.oclAsType(CompoundRelationalTerm))/][/if]
+[if (anExpression.negated)])[/if]
 [/template]
 
 [template public atomicTerm(aTerm : AtomicRelationalTerm)]
@@ -249,4 +278,15 @@
 
 [template public action(anAction : Action)]
 [anAction.actuator.name/].[anAction.command.name/] IN [anAction.actuator.eContainer().oclAsType(Room).name/]
+[/template]
+
+[template public deviceInfo(device : Device)]
+[if (device.type.oclIsTypeOf(Sensor))]
+	Sensor	|	[device.name/]	|	([device.lengthPos/], [device.widthPos/])[/if]
+[if (device.type.oclIsTypeOf(Actuator))]
+	Actuator	|	[device.name/]	|	([device.lengthPos/], [device.widthPos/])[/if]
+[/template]
+
+[template public roomInfo(room : Room)]
+[room.name/]	[room.length/] X [room.width/]
 [/template]
