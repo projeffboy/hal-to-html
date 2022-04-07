@@ -65,6 +65,13 @@
 										</label>
 										<p>Actuator</p>
 									</li>
+									<li style="padding-left: 0">
+										<label class="switch">
+											<input type="checkbox" onChange="toggleHide()">
+											<span class="slider round"></span>
+										</label>
+										<p>Enable click to hide device</p>
+									</li>
 								</ul>
 
 
@@ -90,7 +97,7 @@
 																[for (sensorEntry : SensorEntry | aHal.entries)]
 																[if (sensorEntry.sensor = device)]
 																<li>reading: [sensorEntry.reading/]</li>
-																<li>time stamp: [sensorEntry.timeStamp/]</li>
+																<li>timestamp: [sensorEntry.timeStamp/]</li>
 																[/if]
 																[/for]
 
@@ -208,6 +215,19 @@
 						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "none");
   					}
 				}
+
+				var hideMode = false;
+				function toggleHide() {
+					hideMode = !hideMode;
+				}
+
+				document.querySelectorAll(".sensor, .actuator").forEach(d => {
+					d.onclick = () => {
+						if (hideMode) {
+							d.style.display = "none";
+						}
+					}
+				})
 			</script>
 	</body>
 </html>

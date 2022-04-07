@@ -42,17 +42,24 @@
 								<ul style="list-style-type: none; columns: 8; -webkit-columns: 8; -moz-columns: 8;">
 									<li>
 										<label class="switch">
-											<input type="checkbox" onChange="displaySensors()">
+											<input type="checkbox" onChange="displaySensors()" checked>
 											<span class="slider round"></span>
 										</label>
 										<p>Sensor</p>
 									</li>
 									<li>
 										<label class="switch">
-											<input type="checkbox" onChange="displayActuators()">
+											<input type="checkbox" onChange="displayActuators()" checked>
 											<span class="slider round"></span>
 										</label>
 										<p>Actuator</p>
+									</li>
+									<li style="padding-left: 0">
+										<label class="switch">
+											<input type="checkbox" onChange="toggleHide()">
+											<span class="slider round"></span>
+										</label>
+										<p>Enable click to hide device</p>
 									</li>
 								</ul>
 
@@ -60,63 +67,175 @@
 								<!-- Acceleo template -->
 
 
-									<!-- "Living Room" -->
+									<!-- Studio -->
 									<div class="section">
-										<h3 class="major">"Living Room"</h3>
+										<h3 class="major">Studio</h3>
 
-										<div style="position: relative; border: 10px solid #DCDCDC; height: 700.0px; width: 1100.0px;">
+										<div style="position: relative; border: 10px solid #DCDCDC; height: 6.0px; width: 6.0px;">
 
-													<div class="sensor" style="position: absolute; top: 100.0px; left: 200.0px;">
-														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+													<div class="actuator" style="position: absolute; top: 0.5px; left: 1.5px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
 														<div class="description">
 															<ul>
-																<li>"temperature sensor #1"</li>
-																<li>(100.0, 200.0)</li>
+																<li>"Philips Hue lamp"</li>
+																<li>(0.5, 1.5)</li>
+							
+																<li>turnOn</li>
+																<li>turnOff</li>
+																<li>changeColor</li>
+																<li>dim</li>
+																<li>brighten</li>
+																<li>pulse</li>
 
-																	<li>reading: "20.434854765 celsius"</li>
-																	<li>time stamp: 1649049856</li>
-																
 															</ul>
 														</div>
 													</div>
 
 
-													<div class="sensor" style="position: absolute; top: 300.0px; left: 500.0px;">
-														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+													<div class="actuator" style="position: absolute; top: 2.0px; left: 2.0px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
 														<div class="description">
 															<ul>
-																<li>"temperature sensor #2"</li>
-																<li>(300.0, 500.0)</li>
+																<li>"Philips Hue #1"</li>
+																<li>(2.0, 2.0)</li>
+							
+																<li>turnOn</li>
+																<li>turnOff</li>
+																<li>changeColor</li>
+																<li>dim</li>
+																<li>brighten</li>
+																<li>pulse</li>
 
-																	<li>reading: "20.434854765 celsius"</li>
-																	<li>time stamp: 1649049856</li>
-																
 															</ul>
 														</div>
 													</div>
 
 
-													<div class="sensor" style="position: absolute; top: 30.0px; left: 5.0px;">
-														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+													<div class="actuator" style="position: absolute; top: 4.0px; left: 2.0px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
 														<div class="description">
 															<ul>
-																<li>window</li>
-																<li>(30.0, 5.0)</li>
+																<li>"Philips Hue #2"</li>
+																<li>(4.0, 2.0)</li>
+							
+																<li>turnOn</li>
+																<li>turnOff</li>
+																<li>changeColor</li>
+																<li>dim</li>
+																<li>brighten</li>
+																<li>pulse</li>
 
-																	<li>reading: "20.434854765 celsius"</li>
-																	<li>time stamp: 1649049856</li>
-																
 															</ul>
 														</div>
 													</div>
 
 
-													<div class="actuator" style="position: absolute; top: 30.0px; left: 5.0px">
-														<img src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+													<div class="actuator" style="position: absolute; top: 2.0px; left: 4.0px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
 														<div class="description">
 															<ul>
-																<li>autoGlass</li>
-																<li>(30.0, 5.0)</li>
+																<li>"Philips Hue #3"</li>
+																<li>(2.0, 4.0)</li>
+							
+																<li>turnOn</li>
+																<li>turnOff</li>
+																<li>changeColor</li>
+																<li>dim</li>
+																<li>brighten</li>
+																<li>pulse</li>
+
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="actuator" style="position: absolute; top: 4.0px; left: 4.0px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"Philips Hue #4"</li>
+																<li>(4.0, 4.0)</li>
+							
+																<li>turnOn</li>
+																<li>turnOff</li>
+																<li>changeColor</li>
+																<li>dim</li>
+																<li>brighten</li>
+																<li>pulse</li>
+
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="actuator" style="position: absolute; top: 0.5px; left: 1.5px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"Amazon Echo Studio"</li>
+																<li>(0.5, 1.5)</li>
+							
+																<li>play</li>
+																<li>pause</li>
+																<li>increaseVolume</li>
+																<li>decreaseVolume</li>
+																<li>nextTrack</li>
+																<li>previousTrack</li>
+																<li>shufflePlaylist</li>
+																<li>randomPlaylist</li>
+																<li>voiceAssistant</li>
+
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="actuator" style="position: absolute; top: 0.0px; left: 0.0px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"Arlo Pro 4"</li>
+																<li>(0.0, 0.0)</li>
+							
+																<li>record</li>
+
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="actuator" style="position: absolute; top: 0.0px; left: 3.0px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"Eve Energy"</li>
+																<li>(0.0, 3.0)</li>
+							
+
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="sensor" style="position: absolute; top: 1.5px; left: 1.5px;">
+														<img class="displayImage" src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>proximity1</li>
+																<li>(1.5, 1.5)</li>
+																
+
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="actuator" style="position: absolute; top: 1.0px; left: 6.0px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"home alone 4 curtain mover"</li>
+																<li>(1.0, 6.0)</li>
 							
 																<li>open</li>
 																<li>close</li>
@@ -126,15 +245,56 @@
 													</div>
 
 
-													<div class="actuator" style="position: absolute; top: 15.0px; left: 4.3px">
-														<img src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+													<div class="sensor" style="position: absolute; top: 0.0px; left: 3.0px;">
+														<img class="displayImage" src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
 														<div class="description">
 															<ul>
-																<li>heater</li>
-																<li>(15.0, 4.3)</li>
+																<li>"nest learning thermostat (sensor)"</li>
+																<li>(0.0, 3.0)</li>
+																
+
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="actuator" style="position: absolute; top: 0.0px; left: 3.0px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"nest learning thermostat (actuator)"</li>
+																<li>(0.0, 3.0)</li>
 							
-																<li>turnOnHeating</li>
-																<li>turnOffHeating</li>
+																<li>increaseTemp</li>
+																<li>decreaseTemp</li>
+
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="actuator" style="position: absolute; top: 0.0px; left: 0.0px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"August Smart Lock Pro"</li>
+																<li>(0.0, 0.0)</li>
+							
+																<li>lock</li>
+																<li>unlock</li>
+
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="sensor" style="position: absolute; top: 0.0px; left: 0.0px;">
+														<img class="displayImage" src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"mahogany door"</li>
+																<li>(0.0, 0.0)</li>
+																
 
 															</ul>
 														</div>
@@ -147,66 +307,64 @@
 
 
 
+									<!-- Bathroom -->
+									<div class="section">
+										<h3 class="major">Bathroom</h3>
+
+										<div style="position: relative; border: 10px solid #DCDCDC; height: 2.0px; width: 3.0px;">
+										</div>
+									</div>
+
+									<br><br><br>
+
+
+
 									<!-- Kitchen -->
 									<div class="section">
 										<h3 class="major">Kitchen</h3>
 
-										<div style="position: relative; border: 10px solid #DCDCDC; height: 600.0px; width: 900.0px;">
+										<div style="position: relative; border: 10px solid #DCDCDC; height: 2.5px; width: 2.5px;">
 
-													<div class="actuator" style="position: absolute; top: 1.5px; left: 0.5px">
-														<img src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+													<div class="sensor" style="position: absolute; top: 1.25px; left: 1.25px;">
+														<img class="displayImage" src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
 														<div class="description">
 															<ul>
-																<li>heater</li>
-																<li>(1.5, 0.5)</li>
-							
-																<li>turnOnHeating</li>
-																<li>turnOffHeating</li>
-
-															</ul>
-														</div>
-													</div>
-
-
-													<div class="sensor" style="position: absolute; top: 0.0px; left: 0.2px;">
-														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
-														<div class="description">
-															<ul>
-																<li>"temperature sensor #1"</li>
-																<li>(0.0, 0.2)</li>
-
-																	<li>reading: "20.434854765 celsius"</li>
-																	<li>time stamp: 1649049856</li>
+																<li>"proximity5"</li>
+																<li>(1.25, 1.25)</li>
 																
+
 															</ul>
 														</div>
 													</div>
 
 
-													<div class="sensor" style="position: absolute; top: 1.5px; left: 6.0px;">
-														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+													<div class="actuator" style="position: absolute; top: 1.25px; left: 1.25px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
 														<div class="description">
 															<ul>
-																<li>window</li>
-																<li>(1.5, 6.0)</li>
-
-																	<li>reading: "20.434854765 celsius"</li>
-																	<li>time stamp: 1649049856</li>
-																
-															</ul>
-														</div>
-													</div>
-
-
-													<div class="actuator" style="position: absolute; top: 30.0px; left: 5.0px">
-														<img src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
-														<div class="description">
-															<ul>
-																<li>smartShard</li>
-																<li>(30.0, 5.0)</li>
+																<li>"Philips Hue #5"</li>
+																<li>(1.25, 1.25)</li>
 							
-																<li>open</li>
-																<li>close</li>
+																<li>turnOn</li>
+																<li>turnOff</li>
+																<li>changeColor</li>
+																<li>dim</li>
+																<li>brighten</li>
+																<li>pulse</li>
+
+															</ul>
+														</div>
+													</div>
+
+
+													<div class="actuator" style="position: absolute; top: 2.5px; left: 2.5px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<div class="description">
+															<ul>
+																<li>"inconspicuous government listening device"</li>
+																<li>(2.5, 2.5)</li>
+							
+																<li>record</li>
 
 															</ul>
 														</div>
@@ -230,25 +388,90 @@
 										<th>Devices</th>
 									</tr>
 									<tr>
-										<td><p>"Living Room" <br> 700.0 X 1100.0</p><br></td>
+										<td><p>Studio <br> 6.0 X 6.0</p><br></td>
 										<td>
-													Sensor	|	"temperature sensor #1"	|	(100.0, 100.0) <br>
-													Sensor	|	"temperature sensor #2"	|	(300.0, 300.0) <br>
-													Sensor	|	window	|	(30.0, 30.0) <br>
-													Actuator	|	autoGlass	|	(30.0, 30.0) <br>
-													Actuator	|	heater	|	(15.0, 15.0) <br>
+													Actuator	|	"Philips Hue lamp"	|	(0.5, 0.5) <br>
+													Actuator	|	"Philips Hue #1"	|	(2.0, 2.0) <br>
+													Actuator	|	"Philips Hue #2"	|	(4.0, 4.0) <br>
+													Actuator	|	"Philips Hue #3"	|	(2.0, 2.0) <br>
+													Actuator	|	"Philips Hue #4"	|	(4.0, 4.0) <br>
+													Actuator	|	"Amazon Echo Studio"	|	(0.5, 0.5) <br>
+													Actuator	|	"Arlo Pro 4"	|	(0.0, 0.0) <br>
+													Actuator	|	"Eve Energy"	|	(0.0, 0.0) <br>
+													Sensor	|	proximity1	|	(1.5, 1.5) <br>
+													Actuator	|	"home alone 4 curtain mover"	|	(1.0, 1.0) <br>
+													Sensor	|	"nest learning thermostat (sensor)"	|	(0.0, 0.0) <br>
+													Actuator	|	"nest learning thermostat (actuator)"	|	(0.0, 0.0) <br>
+													Actuator	|	"August Smart Lock Pro"	|	(0.0, 0.0) <br>
+													Sensor	|	"mahogany door"	|	(0.0, 0.0) <br>
 										</td>
 									</tr>
 									<tr>
-										<td><p>Kitchen <br> 600.0 X 900.0</p><br></td>
+										<td><p>Bathroom <br> 2.0 X 3.0</p><br></td>
 										<td>
-													Actuator	|	heater	|	(1.5, 1.5) <br>
-													Sensor	|	"temperature sensor #1"	|	(0.0, 0.0) <br>
-													Sensor	|	window	|	(1.5, 1.5) <br>
-													Actuator	|	smartShard	|	(30.0, 30.0) <br>
+										</td>
+									</tr>
+									<tr>
+										<td><p>Kitchen <br> 2.5 X 2.5</p><br></td>
+										<td>
+													Sensor	|	"proximity5"	|	(1.25, 1.25) <br>
+													Actuator	|	"Philips Hue #5"	|	(1.25, 1.25) <br>
+													Actuator	|	"inconspicuous government listening device"	|	(2.5, 2.5) <br>
 										</td>
 									</tr>
 								</table>
+
+
+								<h2 class="major">Automation rule</h2>
+								<!-- Automation rule-->	
+								<table>
+									<tr>
+										<th>Name</th>
+										<th>Rule</th>
+									</tr>
+								
+										<tr>
+											<td>
+											Autolock
+											</td>
+											<td>
+											<b>WHEN</b>
+											   
+											   		"mahogany door" IN Studio = "closed"
+											   <br/>
+											<b>THEN</b>
+											   <br/>"August Smart Lock Pro".lock IN Studio
+											</td>
+										</tr>
+										<tr>
+											<td>
+											TurnOnLightsInKitchen
+											</td>
+											<td>
+											<b>WHEN</b>
+											   
+											   		"proximity5" IN Kitchen <= "5min (last detection)"
+											   <br/>
+											<b>THEN</b>
+											   <br/>"Philips Hue #5".turnOn IN Kitchen
+											</td>
+										</tr>
+										<tr>
+											<td>
+											TurnOnLightsInKitchen
+											</td>
+											<td>
+											<b>WHEN</b>
+											   
+											   		"proximity5" IN Kitchen > "5min (last detection)"
+											   <br/>
+											<b>THEN</b>
+											   <br/>"Philips Hue #5".turnOff IN Kitchen
+											</td>
+										</tr>
+									
+								</table>							
+								
 							</article>
 
 					</div>
@@ -291,6 +514,19 @@
 						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "none");
   					}
 				}
+
+				var hideMode = false;
+				function toggleHide() {
+					hideMode = !hideMode;
+				}
+
+				document.querySelectorAll(".sensor, .actuator").forEach(d => {
+					d.onclick = () => {
+						if (hideMode) {
+							d.style.display = "none";
+						}
+					}
+				})
 			</script>
 	</body>
 </html>
