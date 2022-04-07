@@ -30,14 +30,14 @@
 					<header id="header">
 						<div class="content">
 							<div class="inner">
-								<h1>Home Automation Language</h1>
+								<h1>Improved Home Automation Language</h1>
 								<p>Jeffery Tang	-	Weijing Zhang	-	Tian Han Jiang</p>
 							</div>
 						</div>
 						<nav>
 							<ul>
 								<li><a href="#Visual">Visual Interface</a></li>
-								<li><a href="#Menu">Menu Interface</a></li>
+								<li><a href="#Menu">Textual Interface</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -134,7 +134,7 @@
 
 						<!-- Menu -->
 							<article id="Menu">
-								<h2 class="major">Menu</h2>
+								<h2 class="major">Textual Interface</h2>
 
 								<small>All measurements are in cm</small>
 								<br><br>
