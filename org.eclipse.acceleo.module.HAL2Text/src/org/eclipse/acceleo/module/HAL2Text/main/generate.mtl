@@ -199,7 +199,10 @@
 				function displaySensors() {
 					var x = document.getElementsByClassName("sensor");
 					if (window.getComputedStyle(x[ '[' /]0[ ']' /]).display === "none") {
-						document.querySelectorAll(".sensor").forEach(a=>a.style.display = "block");
+						document.querySelectorAll(".sensor").forEach(a => {
+							a.style.display = "block";
+							a.style.visibility = "visible";
+						});
 					}
 					else {
 						document.querySelectorAll(".sensor").forEach(a=>a.style.display = "none");
@@ -209,7 +212,10 @@
 				function displayActuators() {
 					var x = document.getElementsByClassName("actuator");
 					if (window.getComputedStyle(x[ '[' /]0[ ']' /]).display === "none") {
-						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "block");
+						document.querySelectorAll(".actuator").forEach(a => {
+							a.style.display = "block";
+							a.style.visibility = "visible";
+						});
 					}
 					else {
 						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "none");
@@ -224,7 +230,7 @@
 				document.querySelectorAll(".sensor, .actuator").forEach(d => {
 					d.onclick = () => {
 						if (hideMode) {
-							d.style.display = "none";
+							d.style.visibility = "hidden";
 						}
 					}
 				})
