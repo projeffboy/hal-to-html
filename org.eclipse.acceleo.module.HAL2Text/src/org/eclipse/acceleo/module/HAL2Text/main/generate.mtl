@@ -151,15 +151,11 @@
 										[/for]
 									[/for]
 								</select>
-								<br/>
-								<p id="result" style="display:none"></p>
+								<table id="result" style="display:none"></p>
 	
 								<!-- Room Table -->
 								<table id="allDevices">
-									<tr>
-										<th>Rooms</th>
-										<th>Devices</th>
-									</tr>
+									<tr><th>Rooms</th><th>Devices</th></tr>
 									[for (room : Room | rooms)]
 									<tr>
 										<td><p>[room.name/] <br> [room.length/] X [room.width/]</p><br></td>
@@ -244,11 +240,18 @@
 				$("#selectDevice").change(function(){
 					
 					var device = $("#selectDevice").val();
-					$("#result").text(device);
+					// clear the table in advance
+					$("#result tr").remove();
 
 					if(device != ""){
-						$("#allDevices").hide();
 						$("#result").show();
+						$("#allDevices").hide();
+
+						var list = device.split(": ");
+
+						$("#result").append('<tr><th>Room</th><th>Device</th></tr>');
+						$("#result").append('<tr><th>' + list[ '[' /]0[ ']' /] + '</th><th>' + list[ '[' /]1[ ']' /] + '</th></tr>');
+						
 					}else{
 						$("#allDevices").show();
 						$("#result").hide();
@@ -275,8 +278,7 @@
 [/template]
 
 [template public expression(anExpression : BooleanExpression)]
-[if (anExpression.negated)]NOT ([/if][if (anExpression.oclIsTypeOf(AtomicRelationalTerm))][atomicTerm(anExpression.oclAsType(AtomicRelationalTerm))/][else][compoundTerm(anExpression.oclAsType(CompoundRelationalTerm))/][/if]
-[if (anExpression.negated)])[/if]
+[if (anExpression.negated)]NOT ([/if][if (anExpression.oclIsTypeOf(AtomicRelationalTerm))][atomicTerm(anExpression.oclAsType(AtomicRelationalTerm))/][else][compoundTerm(anExpression.oclAsType(CompoundRelationalTerm))/][/if][if (anExpression.negated)])[/if]
 [/template]
 
 [template public atomicTerm(aTerm : AtomicRelationalTerm)]
