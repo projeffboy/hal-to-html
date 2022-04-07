@@ -60,7 +60,7 @@
   <rooms name="Bathroom" length="2.0" width="3.0"/>
   <rooms name="Kitchen" length="2.5" width="2.5">
     <devices name="&quot;proximity5&quot;" type="//@types.0" lengthPos="1.25" widthPos="1.25"/>
-    <devices name="&quot;Philips Hue #5&quot;" type="//@types.3" lengthPos="1.25" widthPos="1.25"/>
+    <devices name="'Philips Hue #5'" type="//@types.3" lengthPos="1.25" widthPos="1.25"/>
     <devices name="&quot;inconspicuous government listening device&quot;" type="//@types.6" lengthPos="2.5" widthPos="2.5"/>
   </rooms>
   <rules name="Autolock" active="true">
