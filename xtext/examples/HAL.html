@@ -42,17 +42,24 @@
 								<ul style="list-style-type: none; columns: 8; -webkit-columns: 8; -moz-columns: 8;">
 									<li>
 										<label class="switch">
-											<input type="checkbox" onChange="displaySensors()">
+											<input type="checkbox" onChange="displaySensors()" checked>
 											<span class="slider round"></span>
 										</label>
 										<p>Sensor</p>
 									</li>
 									<li>
 										<label class="switch">
-											<input type="checkbox" onChange="displayActuators()">
+											<input type="checkbox" onChange="displayActuators()" checked>
 											<span class="slider round"></span>
 										</label>
 										<p>Actuator</p>
+									</li>
+									<li style="padding-left: 0">
+										<label class="switch">
+											<input type="checkbox" onChange="toggleHide()">
+											<span class="slider round"></span>
+										</label>
+										<p>Enable click to hide device</p>
 									</li>
 								</ul>
 
@@ -64,55 +71,55 @@
 									<div class="section">
 										<h3 class="major">"Living Room"</h3>
 
-										<div style="position: relative; border: 10px solid #DCDCDC; height: 700.0px; width: 1100.0px;">
+										<div style="position: relative; border: 10px solid #DCDCDC; height: 30.0px; width: 10.0px;">
 
-													<div class="sensor" style="position: absolute; top: 100.0px; left: 200.0px;">
-														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+													<div class="sensor" style="position: absolute; top: 0.0px; left: 5.0px;">
+														<img class="displayImage" src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>"temperature sensor #1"</li>
-																<li>(100.0, 200.0)</li>
-
-																	<li>reading: "20.434854765 celsius"</li>
-																	<li>time stamp: 1649049856</li>
+																<li>(0.0, 5.0)</li>
 																
+																<li>reading: "20.434854765 celsius"</li>
+																<li>timestamp: 1649049856</li>
+
 															</ul>
 														</div>
 													</div>
 
 
-													<div class="sensor" style="position: absolute; top: 300.0px; left: 500.0px;">
-														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+													<div class="sensor" style="position: absolute; top: 15.0px; left: 5.0px;">
+														<img class="displayImage" src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>"temperature sensor #2"</li>
-																<li>(300.0, 500.0)</li>
-
-																	<li>reading: "20.434854765 celsius"</li>
-																	<li>time stamp: 1649049856</li>
+																<li>(15.0, 5.0)</li>
 																
+
 															</ul>
 														</div>
 													</div>
 
 
 													<div class="sensor" style="position: absolute; top: 30.0px; left: 5.0px;">
-														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+														<img class="displayImage" src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>window</li>
 																<li>(30.0, 5.0)</li>
-
-																	<li>reading: "20.434854765 celsius"</li>
-																	<li>time stamp: 1649049856</li>
 																
+																<li>reading: "closed"</li>
+																<li>timestamp: 1649204544</li>
+																<li>reading: "open"</li>
+																<li>timestamp: 1649204544</li>
+
 															</ul>
 														</div>
 													</div>
 
 
 													<div class="actuator" style="position: absolute; top: 30.0px; left: 5.0px">
-														<img src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>autoGlass</li>
@@ -127,7 +134,7 @@
 
 
 													<div class="actuator" style="position: absolute; top: 15.0px; left: 4.3px">
-														<img src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>heater</li>
@@ -151,10 +158,10 @@
 									<div class="section">
 										<h3 class="major">Kitchen</h3>
 
-										<div style="position: relative; border: 10px solid #DCDCDC; height: 600.0px; width: 900.0px;">
+										<div style="position: relative; border: 10px solid #DCDCDC; height: 2.0px; width: 6.0px;">
 
 													<div class="actuator" style="position: absolute; top: 1.5px; left: 0.5px">
-														<img src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>heater</li>
@@ -169,37 +176,33 @@
 
 
 													<div class="sensor" style="position: absolute; top: 0.0px; left: 0.2px;">
-														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+														<img class="displayImage" src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>"temperature sensor #1"</li>
 																<li>(0.0, 0.2)</li>
-
-																	<li>reading: "20.434854765 celsius"</li>
-																	<li>time stamp: 1649049856</li>
 																
+
 															</ul>
 														</div>
 													</div>
 
 
 													<div class="sensor" style="position: absolute; top: 1.5px; left: 6.0px;">
-														<img src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+														<img class="displayImage" src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>window</li>
 																<li>(1.5, 6.0)</li>
-
-																	<li>reading: "20.434854765 celsius"</li>
-																	<li>time stamp: 1649049856</li>
 																
+
 															</ul>
 														</div>
 													</div>
 
 
 													<div class="actuator" style="position: absolute; top: 30.0px; left: 5.0px">
-														<img src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
 														<div class="description">
 															<ul>
 																<li>smartShard</li>
@@ -230,17 +233,17 @@
 										<th>Devices</th>
 									</tr>
 									<tr>
-										<td><p>"Living Room" <br> 700.0 X 1100.0</p><br></td>
+										<td><p>"Living Room" <br> 30.0 X 10.0</p><br></td>
 										<td>
-													Sensor	|	"temperature sensor #1"	|	(100.0, 100.0) <br>
-													Sensor	|	"temperature sensor #2"	|	(300.0, 300.0) <br>
+													Sensor	|	"temperature sensor #1"	|	(0.0, 0.0) <br>
+													Sensor	|	"temperature sensor #2"	|	(15.0, 15.0) <br>
 													Sensor	|	window	|	(30.0, 30.0) <br>
 													Actuator	|	autoGlass	|	(30.0, 30.0) <br>
 													Actuator	|	heater	|	(15.0, 15.0) <br>
 										</td>
 									</tr>
 									<tr>
-										<td><p>Kitchen <br> 600.0 X 900.0</p><br></td>
+										<td><p>Kitchen <br> 2.0 X 6.0</p><br></td>
 										<td>
 													Actuator	|	heater	|	(1.5, 1.5) <br>
 													Sensor	|	"temperature sensor #1"	|	(0.0, 0.0) <br>
@@ -249,6 +252,112 @@
 										</td>
 									</tr>
 								</table>
+
+
+								<h2 class="major">Automation rule</h2>
+								<!-- Automation rule-->	
+								<table>
+									<tr>
+										<th>Name</th>
+										<th>Rule</th>
+									</tr>
+								
+										<tr>
+											<td>
+											Simple
+											</td>
+											<td>
+											<b>WHEN</b>
+											   
+											   		"temperature sensor #1" IN "Living Room" < "18"
+											   <br/>
+											<b>THEN</b>
+											   <br/>heater.turnOffHeating IN "Living Room"
+											</td>
+										</tr>
+										<tr>
+											<td>
+											Compound
+											</td>
+											<td>
+											<b>WHEN</b>
+											   
+											   (
+											   		"temperature sensor #1" IN "Living Room" < "18"
+											   
+											   AND 
+											   		window IN "Living Room" = "closed"
+											   )
+											   <br/>
+											<b>THEN</b>
+											   <br/>heater.turnOnHeating IN "Living Room"
+											</td>
+										</tr>
+										<tr>
+											<td>
+											Nested
+											</td>
+											<td>
+											<b>WHEN</b>
+											   
+											   (
+											   (
+											   		"temperature sensor #1" IN "Living Room" < "18"
+											   
+											   OR NOT (
+											   		"temperature sensor #2" IN "Living Room" >= "18"
+											   )
+											   )
+											   
+											   AND 
+											   		window IN "Living Room" = "closed"
+											   )
+											   <br/>
+											<b>THEN</b>
+											   <br/>heater.turnOnHeating IN "Living Room"<br/>heater.turnOnHeating IN Kitchen
+											</td>
+										</tr>
+										<tr>
+											<td>
+											Complex
+											</td>
+											<td>
+											<b>WHEN</b>
+											   
+											   (
+											   (
+											   (
+											   (
+											   		"temperature sensor #1" IN "Living Room" > "24"
+											   
+											   AND 
+											   		"temperature sensor #1" IN Kitchen > "24"
+											   )
+											   
+											   OR 
+											   		"temperature sensor #1" IN "Living Room" > "26"
+											   )
+											   
+											   OR 
+											   		"temperature sensor #1" IN Kitchen > "26"
+											   )
+											   
+											   AND 
+											   (
+											   		window IN "Living Room" = "closed"
+											   
+											   OR 
+											   		window IN Kitchen = "closed"
+											   )
+											   )
+											   <br/>
+											<b>THEN</b>
+											   <br/>heater.turnOffHeating IN "Living Room"<br/>autoGlass.open IN "Living Room"<br/>heater.turnOffHeating IN Kitchen<br/>smartShard.open IN Kitchen
+											</td>
+										</tr>
+									
+								</table>							
+								
 							</article>
 
 					</div>
@@ -275,7 +384,10 @@
 				function displaySensors() {
 					var x = document.getElementsByClassName("sensor");
 					if (window.getComputedStyle(x[0]).display === "none") {
-						document.querySelectorAll(".sensor").forEach(a=>a.style.display = "block");
+						document.querySelectorAll(".sensor").forEach(a => {
+							a.style.display = "block";
+							a.style.visibility = "visible";
+						});
 					}
 					else {
 						document.querySelectorAll(".sensor").forEach(a=>a.style.display = "none");
@@ -285,12 +397,28 @@
 				function displayActuators() {
 					var x = document.getElementsByClassName("actuator");
 					if (window.getComputedStyle(x[0]).display === "none") {
-						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "block");
+						document.querySelectorAll(".actuator").forEach(a => {
+							a.style.display = "block";
+							a.style.visibility = "visible";
+						});
 					}
 					else {
 						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "none");
   					}
 				}
+
+				var hideMode = false;
+				function toggleHide() {
+					hideMode = !hideMode;
+				}
+
+				document.querySelectorAll(".sensor, .actuator").forEach(d => {
+					d.onclick = () => {
+						if (hideMode) {
+							d.style.visibility = "hidden";
+						}
+					}
+				})
 			</script>
 	</body>
 </html>

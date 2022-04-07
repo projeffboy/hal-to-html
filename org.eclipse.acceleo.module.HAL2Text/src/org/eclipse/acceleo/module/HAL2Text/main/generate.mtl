@@ -65,6 +65,13 @@
 										</label>
 										<p>Actuator</p>
 									</li>
+									<li style="padding-left: 0">
+										<label class="switch">
+											<input type="checkbox" onChange="toggleHide()">
+											<span class="slider round"></span>
+										</label>
+										<p>Enable click to hide device</p>
+									</li>
 								</ul>
 
 
@@ -90,7 +97,7 @@
 																[for (sensorEntry : SensorEntry | aHal.entries)]
 																[if (sensorEntry.sensor = device)]
 																<li>reading: [sensorEntry.reading/]</li>
-																<li>time stamp: [sensorEntry.timeStamp/]</li>
+																<li>timestamp: [sensorEntry.timeStamp/]</li>
 																[/if]
 																[/for]
 
@@ -145,8 +152,7 @@
 									[/for]
 								</select>
 								<br/>
-								<table id="result" style="display:none">
-								</table>
+								<p id="result" style="display:none"></p>
 	
 								<!-- Room Table -->
 								<table id="allDevices">
@@ -212,7 +218,10 @@
 				function displaySensors() {
 					var x = document.getElementsByClassName("sensor");
 					if (window.getComputedStyle(x[ '[' /]0[ ']' /]).display === "none") {
-						document.querySelectorAll(".sensor").forEach(a=>a.style.display = "block");
+						document.querySelectorAll(".sensor").forEach(a => {
+							a.style.display = "block";
+							a.style.visibility = "visible";
+						});
 					}
 					else {
 						document.querySelectorAll(".sensor").forEach(a=>a.style.display = "none");
@@ -222,7 +231,10 @@
 				function displayActuators() {
 					var x = document.getElementsByClassName("actuator");
 					if (window.getComputedStyle(x[ '[' /]0[ ']' /]).display === "none") {
-						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "block");
+						document.querySelectorAll(".actuator").forEach(a => {
+							a.style.display = "block";
+							a.style.visibility = "visible";
+						});
 					}
 					else {
 						document.querySelectorAll(".actuator").forEach(a=>a.style.display = "none");
