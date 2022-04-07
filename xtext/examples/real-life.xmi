@@ -41,27 +41,27 @@
     <commands name="open"/>
     <commands name="close"/>
   </types>
-  <rooms name="Studio" length="6.0" width="6.0">
-    <devices name="&quot;Philips Hue lamp&quot;" type="//@types.3" lengthPos="0.5" widthPos="1.5"/>
-    <devices name="&quot;Philips Hue #1&quot;" type="//@types.3" lengthPos="2.0" widthPos="2.0"/>
-    <devices name="&quot;Philips Hue #2&quot;" type="//@types.3" lengthPos="4.0" widthPos="2.0"/>
-    <devices name="&quot;Philips Hue #3&quot;" type="//@types.3" lengthPos="2.0" widthPos="4.0"/>
-    <devices name="&quot;Philips Hue #4&quot;" type="//@types.3" lengthPos="4.0" widthPos="4.0"/>
-    <devices name="&quot;Amazon Echo Studio&quot;" type="//@types.4" lengthPos="0.5" widthPos="1.5"/>
+  <rooms name="Studio" length="600.0" width="600.0">
+    <devices name="&quot;Philips Hue lamp&quot;" type="//@types.3" lengthPos="50.0" widthPos="150.0"/>
+    <devices name="&quot;Philips Hue #1&quot;" type="//@types.3" lengthPos="200.0" widthPos="200.0"/>
+    <devices name="&quot;Philips Hue #2&quot;" type="//@types.3" lengthPos="400.0" widthPos="200.0"/>
+    <devices name="&quot;Philips Hue #3&quot;" type="//@types.3" lengthPos="200.0" widthPos="400.0"/>
+    <devices name="&quot;Philips Hue #4&quot;" type="//@types.3" lengthPos="400.0" widthPos="400.0"/>
+    <devices name="&quot;Amazon Echo Studio&quot;" type="//@types.4" lengthPos="50.0" widthPos="150.0"/>
     <devices name="&quot;Arlo Pro 4&quot;" type="//@types.5"/>
-    <devices name="&quot;Eve Energy&quot;" type="//@types.7" widthPos="3.0"/>
-    <devices name="proximity1" type="//@types.0" lengthPos="1.5" widthPos="1.5"/>
-    <devices name="&quot;home alone 4 curtain mover&quot;" type="//@types.10" lengthPos="1.0" widthPos="6.0"/>
-    <devices name="&quot;nest learning thermostat (sensor)&quot;" type="//@types.1" widthPos="3.0"/>
-    <devices name="&quot;nest learning thermostat (actuator)&quot;" type="//@types.8" widthPos="3.0"/>
+    <devices name="&quot;Eve Energy&quot;" type="//@types.7" widthPos="300.0"/>
+    <devices name="proximity1" type="//@types.0" lengthPos="150.0" widthPos="150.0"/>
+    <devices name="&quot;home alone 4 curtain mover&quot;" type="//@types.10" lengthPos="100.0" widthPos="600.0"/>
+    <devices name="&quot;nest learning thermostat (sensor)&quot;" type="//@types.1" widthPos="300.0"/>
+    <devices name="&quot;nest learning thermostat (actuator)&quot;" type="//@types.8" widthPos="300.0"/>
     <devices name="&quot;August Smart Lock Pro&quot;" type="//@types.9"/>
     <devices name="&quot;mahogany door&quot;" type="//@types.2"/>
   </rooms>
-  <rooms name="Bathroom" length="2.0" width="3.0"/>
-  <rooms name="Kitchen" length="2.5" width="2.5">
-    <devices name="&quot;proximity5&quot;" type="//@types.0" lengthPos="1.25" widthPos="1.25"/>
-    <devices name="&quot;Philips Hue #5&quot;" type="//@types.3" lengthPos="1.25" widthPos="1.25"/>
-    <devices name="&quot;inconspicuous government listening device&quot;" type="//@types.6" lengthPos="2.5" widthPos="2.5"/>
+  <rooms name="Bathroom" length="200.0" width="300.0"/>
+  <rooms name="Kitchen" length="250.0" width="250.0">
+    <devices name="&quot;proximity5&quot;" type="//@types.0" lengthPos="125.0" widthPos="125.0"/>
+    <devices name="&quot;Philips Hue #5&quot;" type="//@types.3" lengthPos="125.0" widthPos="125.0"/>
+    <devices name="&quot;inconspicuous government listening device&quot;" type="//@types.6" lengthPos="250.0" widthPos="250.0"/>
   </rooms>
   <rules name="Autolock" active="true">
     <precondition xsi:type="hal:AtomicRelationalTerm" sensor="//@rooms.0/@devices.13" comparedAgainstValue="&quot;closed&quot;"/>

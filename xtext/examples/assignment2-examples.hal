@@ -18,19 +18,19 @@ types {
 }
 
 rooms {
-	"Living Room" (30 x 10) {
-		"temperature sensor #1" is type temperature at (0, 5),
-		"temperature sensor #2" is type temperature at (15, 5),
-		window is type window at (30, 5),
-		autoGlass is type "window motor" at (30, 5),
-		heater is type heating at (15, 4.3)
+	"Living Room" (1500 x 500) {
+		"temperature sensor #1" is type temperature at (0, 250),
+		"temperature sensor #2" is type temperature at (750, 250),
+		window is type window at (1500, 250),
+		autoGlass is type "window motor" at (1500, 250),
+		heater is type heating at (750, 215.5)
 	}
 	
-	Kitchen (2 x 6) {
-		heater is type heating at (1.5, 0.5),
-		"temperature sensor #1" is type temperature at (0, 0.2),
-		window is type window at (1.5, 6),
-		smartShard is type "window motor" at (30, 5)
+	Kitchen (200 x 600) {
+		heater is type heating at (150, 50),
+		"temperature sensor #1" is type temperature at (0, 200),
+		window is type window at (150, 600),
+		smartShard is type "window motor" at (3, 500)
 	}
 }
 

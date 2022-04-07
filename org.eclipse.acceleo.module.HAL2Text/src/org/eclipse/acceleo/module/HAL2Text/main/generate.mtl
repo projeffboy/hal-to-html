@@ -74,6 +74,8 @@
 									</li>
 								</ul>
 
+								<small>All measurements are in cm</small>
+								<br><br>
 
 								<!-- Acceleo template -->
 								[for (room : Room | rooms)]
@@ -83,12 +85,12 @@
 									<div class="section">
 										<h3 class="major">[room.name/]</h3>
 
-										<div style="position: relative; border: 10px solid #DCDCDC; height: [room.length/]px; width: [room.width/]px;">
+										<div style="position: relative; border: 10px solid #DCDCDC; height: [room.length/]px; width: [room.width/]px; box-sizing: content-box;">
 											[for (device : Device | room.devices)]
 
 												[if (device.type.oclIsTypeOf(Sensor))]
-													<div class="sensor" style="position: absolute; top: [device.lengthPos/]px; left: [device.widthPos/]px;">
-														<img class="displayImage" src="./images/sensor.png" alt="Sensor"  onclick="showDescription()">
+													<div class="sensor" style="position: absolute; top: [device.lengthPos - 50/]px; left: [device.widthPos - 50/]px;">
+														<img class="displayImage" src="./images/sensor.png" alt="Sensor">
 														<div class="description">
 															<ul>
 																<li>[device.name/]</li>
@@ -100,14 +102,13 @@
 																<li>timestamp: [sensorEntry.timeStamp/]</li>
 																[/if]
 																[/for]
-
 															</ul>
 														</div>
 													</div>
 												[/if]
 												[if (device.type.oclIsTypeOf(Actuator))]
-													<div class="actuator" style="position: absolute; top: [device.lengthPos/]px; left: [device.widthPos/]px">
-														<img img class="displayImage" src="./images/actuator.png" alt="Actuator" onclick="showDescription()">
+													<div class="actuator" style="position: absolute; top: [device.lengthPos - 50/]px; left: [device.widthPos - 50/]px">
+														<img img class="displayImage" src="./images/actuator.png" alt="Actuator">
 														<div class="description">
 															<ul>
 																<li>[device.name/]</li>
@@ -134,6 +135,9 @@
 						<!-- Menu -->
 							<article id="Menu">
 								<h2 class="major">Menu</h2>
+
+								<small>All measurements are in cm</small>
+								<br><br>
 
 								<!-- Select shown device-->
 								<select id="selectDevice">
@@ -246,12 +250,39 @@
 					var device = $("#selectDevice").val();
 					$("#result").text(device);
 
+					
+					for (var trRule of document.getElementsByClassName('rule')) {
+						trRule.style.display = 'table-row';
+					}
+
 					if(device != ""){
 						$("#allDevices").hide();
 						$("#result").show();
+
+						var terms = device.split("\t");
+						var nameForRule = terms.at(4) + " IN " + terms.at(0);
+						var nameForRule2 = terms.at(4) + ".";
+						for (var trRule of document.getElementsByClassName('rule')) {
+							if (!trRule.children[ '[' /]1[ ']' /].innerHTML.includes(nameForRule) && !trRule.children[ '[' /]1[ ']' /].innerHTML.includes(nameForRule2)) {
+								trRule.style.display = 'none';
+							}
+						}
 					}else{
 						$("#allDevices").show();
 						$("#result").hide();
+					}
+				})
+
+				var hideMode = false;
+				function toggleHide() {
+					hideMode = !hideMode;
+				}
+
+				document.querySelectorAll(".sensor, .actuator").forEach(d => {
+					d.onclick = () => {
+						if (hideMode) {
+							d.style.visibility = "hidden";
+						}
 					}
 				})
 			</script>
@@ -261,7 +292,7 @@
 [/template]
 
 [template public rule(aRule : AutomationRule)]
-<tr>
+<tr class="rule">
 	<td>
 	[aRule.name/]
 	</td>

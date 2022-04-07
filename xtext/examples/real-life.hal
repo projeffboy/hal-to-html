@@ -56,31 +56,31 @@ types {
 
 
 rooms {
-	Studio (6 x 6) {
-		"Philips Hue lamp" is type lightbulb at (0.5, 1.5),
-		"Philips Hue #1" is type lightbulb at (2, 2),
-		"Philips Hue #2" is type lightbulb at (4, 2),
-		"Philips Hue #3" is type lightbulb at (2, 4),
-		"Philips Hue #4" is type lightbulb at (4, 4),
-		"Amazon Echo Studio" is type speaker at (0.5, 1.5),
+	Studio (600 x 600) {
+		"Philips Hue lamp" is type lightbulb at (50, 150),
+		"Philips Hue #1" is type lightbulb at (200, 200),
+		"Philips Hue #2" is type lightbulb at (400, 200),
+		"Philips Hue #3" is type lightbulb at (200, 400),
+		"Philips Hue #4" is type lightbulb at (400, 400),
+		"Amazon Echo Studio" is type speaker at (50, 150),
 		"Arlo Pro 4" is type securityCamera at (0, 0),
-		"Eve Energy" is type smartPlug at (0, 3),
-		proximity1 is type proximity at (1.5, 1.5),
-		"home alone 4 curtain mover" is type curtainMotor at (1, 6),
-		"nest learning thermostat (sensor)" is type temperature at (0, 3),
-		"nest learning thermostat (actuator)" is type tempRegulator at (0, 3),
+		"Eve Energy" is type smartPlug at (0, 300),
+		proximity1 is type proximity at (150, 150),
+		"home alone 4 curtain mover" is type curtainMotor at (100, 600),
+		"nest learning thermostat (sensor)" is type temperature at (0, 300),
+		"nest learning thermostat (actuator)" is type tempRegulator at (0, 300),
 		"August Smart Lock Pro" is type lock at (0, 0),
 		"mahogany door" is type door at (0, 0)
 	}
 	
-	Bathroom (2 x 3) {
+	Bathroom (200 x 300) {
 		
 	}
 	
-	Kitchen (2.5 x 2.5) {
-		"proximity5" is type proximity at (1.25, 1.25),
-		"Philips Hue #5" is type lightbulb at (1.25, 1.25),
-		"inconspicuous government listening device" is type surveillanceRecorder at (2.5, 2.5)
+	Kitchen (250 x 250) {
+		"proximity5" is type proximity at (125, 125),
+		"Philips Hue #5" is type lightbulb at (125, 125),
+		"inconspicuous government listening device" is type surveillanceRecorder at (250, 250)
 	}
 }
 
